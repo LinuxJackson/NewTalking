@@ -181,7 +181,7 @@ namespace Newtalking_DAL_Server
             try
             {
                 con.Open();
-                sql = "INSERT INTO over_messages(sender_id,receiver_id,time,message) VALUES(" + msg.User_id + "," + msg.Receiver_id + "," + msg.Time + "," + msg.Message + ")";
+                sql = "INSERT INTO over_messages(sender_id,receiver_id,time,message) VALUES(" + msg.User_id + "," + msg.Receiver_id + "," + (int)msg.Time.Ticks + "," + msg.Message.Trim() + ")";
                 MySQLCommand com = new MySQLCommand(sql, con);
                 com.ExecuteNonQuery();
                 return true;

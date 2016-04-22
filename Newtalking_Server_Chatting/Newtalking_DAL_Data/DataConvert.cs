@@ -56,9 +56,16 @@ namespace Newtalking_DAL_Data
 
             dataResult.User_id = BitConverter.ToInt32(bSender_id, 0);
             dataResult.Receiver_id = BitConverter.ToInt32(bReceiver_id, 0);
-            long timeTick = BitConverter.ToInt64(bTime, 0);
+            int timeTick = BitConverter.ToInt32(bTime, 0);
             dataResult.Time = new DateTime(timeTick);
-            dataResult.Message = Encoding.Default.GetString(bMessage);
+            string msgTemp = Encoding.Default.GetString(bMessage);
+
+            foreach (char c in msgTemp)
+            {
+                if (c == '\0')
+                    break;
+                dataResult.Message += c;
+            }
 
             return dataResult;
         }
