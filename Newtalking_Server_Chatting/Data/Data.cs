@@ -9,20 +9,27 @@ namespace Data
 {
     public class Data
     {
-        static private ArrayList arrOnlineUsers = new ArrayList();
+        static private List<OnlineUserProperties> arrOnlineUsers = new List<OnlineUserProperties>();
 
-        static public ArrayList ArrOnlineUsers
+        public static List<OnlineUserProperties> ArrOnlineUsers
         {
-            get { return arrOnlineUsers; }
-            set { arrOnlineUsers = value; }
+            get
+            {
+                return arrOnlineUsers;
+            }
+
+            set
+            {
+                arrOnlineUsers = value;
+            }
         }
 
-        static private ArrayList arrSendingMessages = new ArrayList();
+        //static private ArrayList arrSendingMessages = new ArrayList();
 
-        static public ArrayList ArrSendingMessages
-        {
-            get { return arrSendingMessages; }
-            set { arrSendingMessages = value; }
-        }
+        //static public ArrayList ArrSendingMessages
+        //{
+        //    get { return arrSendingMessages; }
+        //    set { arrSendingMessages = value; }
+        //}
     }
 }

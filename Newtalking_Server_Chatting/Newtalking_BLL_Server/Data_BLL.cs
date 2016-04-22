@@ -12,6 +12,7 @@ namespace Newtalking_BLL_Server
     {
         public void Analysis(DataPackage data)
         {
+            //性能待优化
             Thread tdAnalysis = new Thread(delegate () {
 
             short type;
@@ -72,6 +73,8 @@ namespace Newtalking_BLL_Server
                     case 12:        //撤销关注
                         break;
                     case 13:        //屏蔽
+                        break;
+                    case 14:        //图片消息[待定]
                         break;
                 }
             });

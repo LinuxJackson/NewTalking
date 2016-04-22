@@ -41,7 +41,7 @@ namespace Newtalking_Service
                             //[未升级] 从已登录用户中删除
                             lock (Data.Data.ArrOnlineUsers)
                             {
-                                ArrayList arrTemp = new ArrayList();
+                                List<OnlineUserProperties> arrTemp = new List<OnlineUserProperties>();
                                 for (int i = 0; i < Data.Data.ArrOnlineUsers.Count; i++)
                                 {
                                     OnlineUserProperties onlineUser = (OnlineUserProperties)Data.Data.ArrOnlineUsers[i];

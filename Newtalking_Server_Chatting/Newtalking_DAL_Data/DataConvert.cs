@@ -39,26 +39,26 @@ namespace Newtalking_DAL_Data
         {
             MessageData dataResult = new MessageData();
 
-            byte[] bSender_id = new byte[4];
-            byte[] bReceiver_id = new byte[4];
-            byte[] bTime = new byte[4];
-            byte[] bMessage = new byte[1440];
+            //byte[] bSender_id = new byte[4];
+            //byte[] bReceiver_id = new byte[4];
+            //byte[] bTime = new byte[4];
+            //byte[] bMessage = new byte[1440];
 
-            int i = 0;
-            for (i = 0; i < 4; i++)
-                bSender_id[i] = bReceived[i + 2];
-            for (i = 0; i < 4; i++)
-                bReceiver_id[i] = bReceived[i + 6];
-            for (i = 0; i < 4; i++)
-                bTime[i] = bReceived[i + 10];
-            for (i = 0; i < 1438; i++)
-                bMessage[i] = bReceived[i + 14];
+            //int i = 0;
+            //for (i = 0; i < 4; i++)
+            //    bSender_id[i] = bReceived[i + 2];
+            //for (i = 0; i < 4; i++)
+            //    bReceiver_id[i] = bReceived[i + 6];
+            //for (i = 0; i < 4; i++)
+            //    bTime[i] = bReceived[i + 10];
+            //for (i = 0; i < 1438; i++)
+            //    bMessage[i] = bReceived[i + 14];
 
-            dataResult.User_id = BitConverter.ToInt32(bSender_id, 0);
-            dataResult.Receiver_id = BitConverter.ToInt32(bReceiver_id, 0);
-            int timeTick = BitConverter.ToInt32(bTime, 0);
-            dataResult.Time = new DateTime(timeTick);
-            string msgTemp = Encoding.Default.GetString(bMessage);
+            dataResult.User_id = BitConverter.ToInt32(bReceived, 2);
+            dataResult.Receiver_id = BitConverter.ToInt32(bReceived, 6);
+            int timeTick = BitConverter.ToInt32(bReceived, 10);
+            dataResult.Time = new DateTime((long)timeTick);
+            string msgTemp = Encoding.Default.GetString(bReceived, 14, 1438);
 
             foreach (char c in msgTemp)
             {
@@ -120,17 +120,17 @@ namespace Newtalking_DAL_Data
     {
         public LoginData ConvertToClass(byte[] data)
         {
-            byte[] bUid = new byte[4];
-            byte[] bPassword = new byte[16];
+            //byte[] bUid = new byte[4];
+            //byte[] bPassword = new byte[16];
 
-            for (int i = 0; i < 4; i++)
-                bUid[i] = data[i + 2];
-            for (int i = 0; i < 16; i++)
-                bPassword[i] = data[i + 10];
+            //for (int i = 0; i < 4; i++)
+            //    bUid[i] = data[i + 2];
+            //for (int i = 0; i < 16; i++)
+            //    bPassword[i] = data[i + 10];
 
             LoginData dataResult = new LoginData();
-            dataResult.Uid = BitConverter.ToInt32(bUid, 0);
-            dataResult.User_password = BitConverter.ToString(bPassword);
+            dataResult.Uid = BitConverter.ToInt32(data, 2);
+            dataResult.User_password = BitConverter.ToString(data, 10, 16);
 
             return dataResult;
         }
@@ -201,24 +201,35 @@ namespace Newtalking_DAL_Data
         {
             AccountInfo dataResult = new AccountInfo();
 
-            byte[] bUid = new byte[4];
-            byte[] bUser_id = new byte[4];
-            byte[] bUser_sex = new byte[2];
-            byte[] bUser_birthday = new byte[4];
-            byte[] bUser_phone = new byte[24];
+            //byte[] bUid = new byte[4];
+            //byte[] bUser_id = new byte[4];
+            //byte[] bUser_sex = new byte[2];
+            //byte[] bUser_birthday = new byte[4];
+            //byte[] bUser_phone = new byte[24];
 
-            for (int i = 0; i < 4; i++)
-                bUid[i] = data[i + 2];
-            for (int i = 0; i < 4; i++)
-                bUser_id[i] = data[i + 6];
-            for (int i = 0; i < 2; i++)
-                bUser_sex[i] = data[i + 10];
-            for (int i = 0; i < 4; i++)
-                bUser_birthday[i] = data[i + 12];
-            for (int i = 0; i < 24; i++)
-                bUser_phone[i] = data[i + 16];
+            //for (int i = 0; i < 4; i++)
+            //    bUid[i] = data[i + 2];
+            //for (int i = 0; i < 4; i++)
+            //    bUser_id[i] = data[i + 6];
+            //for (int i = 0; i < 2; i++)
+            //    bUser_sex[i] = data[i + 10];
+            //for (int i = 0; i < 4; i++)
+            //    bUser_birthday[i] = data[i + 12];
+            //for (int i = 0; i < 24; i++)
+            //    bUser_phone[i] = data[i + 16];
+            dataResult.User_id = BitConverter.ToInt32(data, 2);
+            dataResult.Sex = BitConverter.ToInt16(data, 6);
+            dataResult.Birthday = new DateTime((long)BitConverter.ToInt32(data, 12));
+            string tempPhone = Encoding.Default.GetString(data, 16, 24);
 
-            return null;
+            foreach(char c in tempPhone)
+            {
+                if (c == '\0')
+                    break;
+                dataResult.Phone += c;
+            }
+
+            return dataResult;
         }
     }
 
