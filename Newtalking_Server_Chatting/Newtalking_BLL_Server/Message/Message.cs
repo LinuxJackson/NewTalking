@@ -17,10 +17,11 @@ namespace Newtalking_BLL_Server
         MessageData msgData = new MessageData();
         MessageDataConvert convert = new MessageDataConvert();
 
-        public Message(byte[] data)
+        public Message(byte[] data, int user_id)
         {
             msgData = convert.ConvertToClass(data);
             bData = data;
+            msgData.User_id = user_id;
         }
 
         public void Send()

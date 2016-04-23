@@ -14,11 +14,12 @@ namespace Newtalking_BLL_Server
         DataPackage data;
         RefreshRequest rr;
 
-        public MessageFresh(DataPackage dpk)
+        public MessageFresh(DataPackage dpk, int user_id)
         {
             data = dpk;
             RefreshRequestConvert converter = new RefreshRequestConvert();
             rr = converter.ConvertToClass(dpk.Data);
+            rr.User_id = user_id;
         }
 
         public bool Response()

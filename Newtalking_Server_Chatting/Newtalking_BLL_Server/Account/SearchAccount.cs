@@ -6,7 +6,7 @@ using Model;
 using Newtalking_DAL_Data;
 using Newtalking_DAL_Server;
 
-namespace Newtalking_BLL_Server.Account
+namespace Newtalking_BLL_Server
 {
     public class SearchAccount
     {
