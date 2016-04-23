@@ -24,11 +24,11 @@ namespace Newtalking_BLL_Server
 
                 switch (type)
                 {
-                    case 1:            //信息[部分未测试]
+                    case 1:            //信息[测试成功]
                         Message message = new Message(data.Data);
                         message.Send();
                         break;
-                    case 2:            //登陆
+                    case 2:            //登陆[测试成功]
                         AccountLogin accountLogin = new AccountLogin(data);
                         if (accountLogin.Login())
                         {

@@ -24,7 +24,7 @@ namespace Newtalking_BLL_Server
         public bool Response()
         {
             SQLService sql = new SQLService();
-            ArrayList arrMsg = sql.SelOverMessages(rr.User_id);
+            List<MessageData> arrMsg = sql.SelOverMessages(rr.User_id);
             Sender sender = new Sender(data.Client);
 
             foreach (object obj in arrMsg)

@@ -29,8 +29,8 @@ namespace Newtalking_DAL_Data
                 bResult[i + 6] = bReceiver_id[i];
             for (i = 0; i < bTime.Length; i++)
                 bResult[i + 10] = bTime[i];
-            for (i = 0; i < 1438 && i < bMessage.Length; i++)
-                bResult[i + 14] = bMessage[i];
+            for (i = 0; i < 1434 && i < bMessage.Length; i++)
+                bResult[i + 18] = bMessage[i];
 
             return bResult;
         }
@@ -56,9 +56,9 @@ namespace Newtalking_DAL_Data
 
             dataResult.User_id = BitConverter.ToInt32(bReceived, 2);
             dataResult.Receiver_id = BitConverter.ToInt32(bReceived, 6);
-            int timeTick = BitConverter.ToInt32(bReceived, 10);
-            dataResult.Time = new DateTime((long)timeTick);
-            string msgTemp = Encoding.Default.GetString(bReceived, 14, 1438);
+            long timeTick = BitConverter.ToInt64(bReceived, 10);
+            dataResult.Time = new DateTime(timeTick);
+            string msgTemp = Encoding.Default.GetString(bReceived, 18, 1434);
 
             foreach (char c in msgTemp)
             {
@@ -172,7 +172,7 @@ namespace Newtalking_DAL_Data
         public byte[] ConvertToBytes(AccountInfo data)
         {
             //4+2+4+24
-            byte[] bResult = new byte[42];
+            byte[] bResult = new byte[46];
 
             byte[] bMessageType = BitConverter.GetBytes(data.MessageType);
             byte[] bUid = BitConverter.GetBytes(data.Uid);
@@ -192,7 +192,7 @@ namespace Newtalking_DAL_Data
             for (int i = 0; i < bUser_birthdat.Length; i++)
                 bResult[i + 12] = bUser_birthdat[i];
             for (int i = 0; i < bUser_phone.Length; i++)
-                bResult[i + 16] = bUser_phone[i];
+                bResult[i + 20] = bUser_phone[i];
 
             return bResult;
         }
@@ -219,8 +219,8 @@ namespace Newtalking_DAL_Data
             //    bUser_phone[i] = data[i + 16];
             dataResult.User_id = BitConverter.ToInt32(data, 2);
             dataResult.Sex = BitConverter.ToInt16(data, 6);
-            dataResult.Birthday = new DateTime((long)BitConverter.ToInt32(data, 12));
-            string tempPhone = Encoding.Default.GetString(data, 16, 24);
+            dataResult.Birthday = new DateTime(BitConverter.ToInt64(data, 12));
+            string tempPhone = Encoding.Default.GetString(data, 20, 24);
 
             foreach(char c in tempPhone)
             {

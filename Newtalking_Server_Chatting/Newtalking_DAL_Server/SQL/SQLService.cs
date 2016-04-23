@@ -97,7 +97,7 @@ namespace Newtalking_DAL_Server
             try
             {
                 con.Open();
-                sql = "UPDATE user_sex = " + accountInfo.Sex + ", user_birthday = " + accountInfo.Birthday + ", user_phone = " + accountInfo.Phone + " FROM users_information WHERE user_id = " + accountInfo.User_id;
+                sql = "UPDATE user_sex = " + accountInfo.Sex + ", user_birthday = '" + accountInfo.Birthday.ToString("yyyy-MM-dd") + "', user_phone = " + accountInfo.Phone + " FROM users_information WHERE user_id = " + accountInfo.User_id;
                 MySQLCommand com = new MySQLCommand(sql, con);
                 com.ExecuteNonQuery();
                 return true;
@@ -181,7 +181,7 @@ namespace Newtalking_DAL_Server
             try
             {
                 con.Open();
-                sql = "INSERT INTO over_messages(sender_id,receiver_id,time,message) VALUES(" + msg.User_id + "," + msg.Receiver_id + "," + (int)msg.Time.Ticks + "," + msg.Message.Trim() + ")";
+                sql = "INSERT INTO over_messages(sender_id,receiver_id,time,message) VALUES(" + msg.User_id + "," + msg.Receiver_id + ",'" + msg.Time.ToString("yy-MM-dd hh:mm:ss") + "'," + msg.Message.Trim() + ")";
                 MySQLCommand com = new MySQLCommand(sql, con);
                 com.ExecuteNonQuery();
                 return true;
@@ -196,29 +196,29 @@ namespace Newtalking_DAL_Server
             }
         }
 
-        public ArrayList SelOverMessages(int user_id)
+        public List<MessageData> SelOverMessages(int user_id)
         {
             try
             {
                 con.Open();
                 DataSet ds = new DataSet();
-                sql = "SELECT * FROM over_messages where receiver_id=" + user_id;
+                sql = "SELECT * FROM over_messages WHERE receiver_id=" + user_id;
                 MySQLCommand com = new MySQLCommand(sql, con);
                 MySQLDataAdapter adp = new MySQLDataAdapter(com);
                 adp.Fill(ds);
 
-                ArrayList messages = new ArrayList();
+                List<MessageData> messages = new List<MessageData>();
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
                     MessageData msg = new MessageData();
                     msg.User_id = (int)dr["sender_id"];
                     msg.Receiver_id = (int)dr["receiver_id"];
-                    msg.Time = (DateTime)dr["time"];
+                    msg.Time = DateTime.Parse(dr["time"].ToString());
                     msg.Message = dr["message"].ToString();
                     messages.Add(msg);
                 }
 
-                sql = "DELETE user_message where receiver_id=" + user_id;
+                sql = "DELETE FROM over_messages WHERE receiver_id=" + user_id;
                 com = new MySQLCommand(sql, con);
                 com.ExecuteNonQuery();
 
