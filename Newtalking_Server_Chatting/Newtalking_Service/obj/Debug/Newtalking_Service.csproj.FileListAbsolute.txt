@@ -51,3 +51,5 @@ C:\Users\Dell-\Desktop\Newtalking_Server_Chatting_Temp\Newtalking_Service\obj\De
 C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Newtalking_Service\bin\Debug\MySQLDriverCS.dll
 C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Newtalking_Service\bin\Debug\Flie_DAL.dll
 C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Newtalking_Service\bin\Debug\Flie_DAL.pdb
+C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Newtalking_Service\bin\Debug\INI.dll
+C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Newtalking_Service\bin\Debug\INI.pdb

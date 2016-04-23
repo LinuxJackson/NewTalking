@@ -70,6 +70,10 @@
       <Project>{4595da78-c72b-484b-9c40-388719479f7e}</Project>
       <Name>Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\INI\INI.csproj">
+      <Project>{b6559163-47c7-4600-85f4-78a81eb2a72f}</Project>
+      <Name>INI</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{e68dca14-25e4-4240-9540-c7f9466cb1eb}</Project>
       <Name>Model</Name>
@@ -85,6 +89,10 @@
     <ProjectReference Include="..\Newtalking_DAL_Server\Newtalking_DAL_Server.csproj">
       <Project>{71fe2148-2f50-4b4b-9a8e-3288f136d7a0}</Project>
       <Name>Newtalking_DAL_Server</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Server_Properties\Server_Properties.csproj">
+      <Project>{65121ac6-7905-461d-aef5-0f2cf0ececf6}</Project>
+      <Name>Server_Properties</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

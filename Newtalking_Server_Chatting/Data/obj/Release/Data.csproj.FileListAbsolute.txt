@@ -2,3 +2,10 @@ C:\Users\22279_000\Desktop\Newtalking_Server_Chatting\Data\bin\Release\Data.dll
 C:\Users\22279_000\Desktop\Newtalking_Server_Chatting\Data\bin\Release\Data.pdb
 C:\Users\22279_000\Desktop\Newtalking_Server_Chatting\Data\obj\Release\Data.dll
 C:\Users\22279_000\Desktop\Newtalking_Server_Chatting\Data\obj\Release\Data.pdb
+C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Data\bin\Release\Data.dll
+C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Data\bin\Release\Data.pdb
+C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Data\obj\Release\Data.csprojResolveAssemblyReference.cache
+C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Data\obj\Release\Data.Properties.Resources.resources
+C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Data\obj\Release\Data.csproj.GenerateResource.Cache
+C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Data\obj\Release\Data.dll
+C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Data\obj\Release\Data.pdb

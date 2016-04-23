@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Newtalking_Service;
+using Server_Properties;
 
 namespace NewTalking_Server
 {
@@ -23,6 +24,20 @@ namespace NewTalking_Server
                 {
                     case "exit":
                         Environment.Exit(0);
+                        break;
+                    case "SQLKEY_EDIT":
+                        try
+                        {
+                            Console.Write("Input NewKey -->");
+                            string newkey = Console.ReadLine();
+                            INI.FileCheck.ChangeSQLKey(newkey);
+                            Property.SqlKey = newkey;
+                            Console.WriteLine("[Succeeded]");
+                        }
+                        catch
+                        {
+                            Console.WriteLine("[Failed]");
+                        }
                         break;
                 }
             } while (true);

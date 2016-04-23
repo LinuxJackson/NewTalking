@@ -10,3 +10,13 @@ C:\Users\22279_000\Desktop\Newtalking_Server_Chatting\Newtalking_DAL_Server\bin\
 C:\Users\22279_000\Desktop\Newtalking_Server_Chatting\Newtalking_DAL_Server\obj\Release\Newtalking_DAL_Server.csprojResolveAssemblyReference.cache
 C:\Users\22279_000\Desktop\Newtalking_Server_Chatting\Newtalking_DAL_Server\obj\Release\Newtalking_DAL_Server.dll
 C:\Users\22279_000\Desktop\Newtalking_Server_Chatting\Newtalking_DAL_Server\obj\Release\Newtalking_DAL_Server.pdb
+C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Newtalking_DAL_Server\bin\Release\Newtalking_DAL_Server.dll
+C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Newtalking_DAL_Server\bin\Release\Newtalking_DAL_Server.pdb
+C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Newtalking_DAL_Server\bin\Release\Model.dll
+C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Newtalking_DAL_Server\bin\Release\MySQLDriverCS.dll
+C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Newtalking_DAL_Server\bin\Release\Server_Properties.dll
+C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Newtalking_DAL_Server\bin\Release\Model.pdb
+C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Newtalking_DAL_Server\bin\Release\Server_Properties.pdb
+C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Newtalking_DAL_Server\obj\Release\Newtalking_DAL_Server.csprojResolveAssemblyReference.cache
+C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Newtalking_DAL_Server\obj\Release\Newtalking_DAL_Server.dll
+C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Newtalking_DAL_Server\obj\Release\Newtalking_DAL_Server.pdb

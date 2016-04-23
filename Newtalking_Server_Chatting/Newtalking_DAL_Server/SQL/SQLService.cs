@@ -13,7 +13,7 @@ namespace Newtalking_DAL_Server
     public class SQLService
     {
         string sql = "";
-        MySQLConnection con = new MySQLConnection(new MySQLConnectionString("localhost", "NewTalking", "root", "").AsString);
+        MySQLConnection con = new MySQLConnection(new MySQLConnectionString("localhost", "NewTalking", "root", Server_Properties.Property.SqlKey).AsString);
 
         public bool Login(LoginData data)
         {

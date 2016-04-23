@@ -12,3 +12,10 @@ C:\Documents and Settings\Administrator\桌面\Newtalking_Server_Chatting\Newtal
 C:\Documents and Settings\Administrator\桌面\Newtalking_Server_Chatting\Newtalking_DAL_Data\obj\Release\ResolveAssemblyReference.cache
 C:\Documents and Settings\Administrator\桌面\Newtalking_Server_Chatting\Newtalking_DAL_Data\obj\Release\Newtalking_DAL_Data.dll
 C:\Documents and Settings\Administrator\桌面\Newtalking_Server_Chatting\Newtalking_DAL_Data\obj\Release\Newtalking_DAL_Data.pdb
+C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Newtalking_DAL_Data\bin\Release\Newtalking_DAL_Data.dll
+C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Newtalking_DAL_Data\bin\Release\Newtalking_DAL_Data.pdb
+C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Newtalking_DAL_Data\bin\Release\Model.dll
+C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Newtalking_DAL_Data\bin\Release\Model.pdb
+C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Newtalking_DAL_Data\obj\Release\Newtalking_DAL_Data.csprojResolveAssemblyReference.cache
+C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Newtalking_DAL_Data\obj\Release\Newtalking_DAL_Data.dll
+C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Newtalking_DAL_Data\obj\Release\Newtalking_DAL_Data.pdb

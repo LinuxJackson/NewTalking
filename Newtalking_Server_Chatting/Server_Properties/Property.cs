@@ -9,8 +9,23 @@ namespace Server_Properties
 {
     public class Property
     {
+        static string iniDir = Environment.CurrentDirectory + "\\ServerINI\\";
         static IPAddress ip = IPAddress.Parse("0.0.0.0");
         static int port = 2001;
+        static string sqlKey;
+
+        public static string IniDir
+        {
+            get
+            {
+                return iniDir;
+            }
+
+            set
+            {
+                iniDir = value;
+            }
+        }
 
         public static IPAddress Ip
         {
@@ -35,6 +50,19 @@ namespace Server_Properties
             set
             {
                 port = value;
+            }
+        }
+
+        public static string SqlKey
+        {
+            get
+            {
+                return sqlKey;
+            }
+
+            set
+            {
+                sqlKey = value;
             }
         }
     }

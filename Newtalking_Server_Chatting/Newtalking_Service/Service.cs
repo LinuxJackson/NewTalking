@@ -9,6 +9,8 @@ using System.Collections;
 using Newtalking_DAL_Server;
 using Newtalking_BLL_Server;
 using System.Net.Sockets;
+using INI;
+using Server_Properties;
 
 namespace Newtalking_Service
 {
@@ -18,6 +20,16 @@ namespace Newtalking_Service
         {
             Thread tdService = new Thread(delegate ()
             {
+                INI.FileCheck.CheckCreate();
+                try
+                {
+                    Property.SqlKey = INI.FileCheck.ReadSQLKey();
+                }
+                catch
+                {
+                    Property.SqlKey = "";
+                }
+                
                 GetClient getClient = new GetClient();
                 while (true)
                 {
