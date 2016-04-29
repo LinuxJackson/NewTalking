@@ -8,7 +8,7 @@ using Newtalking_DAL_Server;
 using Data;
 using File_DAL;
 
-namespace Newtalking_BLL_Server
+namespace Newtalking_BLL_Server.Account
 {
     public class AccountRequest
     {
@@ -30,7 +30,7 @@ namespace Newtalking_BLL_Server
 
         public void Response()
         {
-            Sender sender = new Sender(dataResponse.Client);
+            Sender sender = new Sender();
             sender.SendMessage(dataResponse);
         }
     }

@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountInfo.cs" />
+    <Compile Include="AddFollowing.cs" />
     <Compile Include="FileRequest.cs" />
     <Compile Include="LoginData.cs" />
     <Compile Include="MessageData.cs" />

@@ -27,7 +27,7 @@ namespace Newtalking_DAL_Server
         {
             try {
                 byte[] data = new byte[BufferSize - 4];
-                Sender sender = new Sender(tcpTarget);
+                Sender sender = new Sender();
                 int op = 0;
                 while (fsSend.Read(data, op, BufferSize - 4) != 0)
                 {

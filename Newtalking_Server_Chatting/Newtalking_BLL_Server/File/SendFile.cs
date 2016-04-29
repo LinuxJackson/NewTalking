@@ -8,7 +8,7 @@ using System.IO;
 using File_DAL;
 using Newtalking_DAL_Data;
 
-namespace Newtalking_BLL_Server
+namespace Newtalking_BLL_Server.File
 {
     public class SendFile
     {

@@ -6,7 +6,7 @@ using Model;
 using Newtalking_DAL_Data;
 using Newtalking_DAL_Server;
 
-namespace Newtalking_BLL_Server
+namespace Newtalking_BLL_Server.Account
 {
     public class SearchAccount
     {
@@ -30,7 +30,7 @@ namespace Newtalking_BLL_Server
 
                 foreach (object obj in arr)
                 {
-                    Sender sender = new Sender(client);
+                    Sender sender = new Sender();
                     DataPackage dpk = new DataPackage();
                     AccountInfoConvet converter = new AccountInfoConvet();
                     dpk.Data = converter.ConvertToBytes((AccountInfo)obj);

@@ -7,7 +7,7 @@ using Newtalking_DAL_Data;
 using Newtalking_DAL_Server;
 using System.Net;
 
-namespace Newtalking_BLL_Server
+namespace Newtalking_BLL_Server.UserInfo
 {
     public class EditAccountInfo
     {

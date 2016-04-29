@@ -7,7 +7,7 @@ using Newtalking_DAL_Data;
 using Model;
 using System.Collections;
 
-namespace Newtalking_BLL_Server
+namespace Newtalking_BLL_Server.Message
 {
     public class MessageFresh
     {
@@ -26,7 +26,7 @@ namespace Newtalking_BLL_Server
         {
             SQLService sql = new SQLService();
             List<MessageData> arrMsg = sql.SelOverMessages(rr.User_id);
-            Sender sender = new Sender(data.Client);
+            Sender sender = new Sender();
 
             foreach (object obj in arrMsg)
             {

@@ -13,24 +13,11 @@ namespace Newtalking_DAL_Data
             byte[] bResult = new byte[1452];
 
             short type = 1;
-            byte[] bMessageType = BitConverter.GetBytes(type);
-            byte[] bSender_id = BitConverter.GetBytes(data.User_id);
-            byte[] bReceiver_id = BitConverter.GetBytes(data.Receiver_id);
-            byte[] bTime = BitConverter.GetBytes(data.Time.Ticks);
-            byte[] bMessage = Encoding.Default.GetBytes(data.Message);
-
-            int i = 0;
-
-            for (i = 0; i < bMessageType.Length; i++)
-                bResult[i + 0] = bSender_id[i];
-            for (i = 0; i < bSender_id.Length; i++)
-                bResult[i + 2] = bSender_id[i];
-            for (i = 0; i < bReceiver_id.Length; i++)
-                bResult[i + 6] = bReceiver_id[i];
-            for (i = 0; i < bTime.Length; i++)
-                bResult[i + 10] = bTime[i];
-            for (i = 0; i < 1434 && i < bMessage.Length; i++)
-                bResult[i + 18] = bMessage[i];
+            BitConverter.GetBytes(type).CopyTo(bResult, 0);
+            BitConverter.GetBytes(data.User_id).CopyTo(bResult, 2);
+            BitConverter.GetBytes(data.Receiver_id).CopyTo(bResult, 6);
+            BitConverter.GetBytes(data.Time.Ticks).CopyTo(bResult, 10);
+            Encoding.Default.GetBytes(data.Message).CopyTo(bResult, 18);
 
             return bResult;
         }
@@ -38,21 +25,6 @@ namespace Newtalking_DAL_Data
         public MessageData ConvertToClass(byte[] bReceived)
         {
             MessageData dataResult = new MessageData();
-
-            //byte[] bSender_id = new byte[4];
-            //byte[] bReceiver_id = new byte[4];
-            //byte[] bTime = new byte[4];
-            //byte[] bMessage = new byte[1440];
-
-            //int i = 0;
-            //for (i = 0; i < 4; i++)
-            //    bSender_id[i] = bReceived[i + 2];
-            //for (i = 0; i < 4; i++)
-            //    bReceiver_id[i] = bReceived[i + 6];
-            //for (i = 0; i < 4; i++)
-            //    bTime[i] = bReceived[i + 10];
-            //for (i = 0; i < 1438; i++)
-            //    bMessage[i] = bReceived[i + 14];
 
             dataResult.User_id = BitConverter.ToInt32(bReceived, 2);
             dataResult.Receiver_id = BitConverter.ToInt32(bReceived, 6);
@@ -75,31 +47,15 @@ namespace Newtalking_DAL_Data
     {
         public byte[] ConvertToBytes(bool boolean, int uid)
         {
-            byte[] bBoolean = BitConverter.GetBytes(boolean);
-            byte[] bUid = BitConverter.GetBytes(uid);
-
             byte[] bResult = new byte[6];
-            for (int i = 0; i < bBoolean.Length; i++)
-                bResult[i + 0] = bBoolean[i];
-            for (int i = 0; i < bUid.Length; i++)
-                bResult[i + 2] = bUid[i];
+            BitConverter.GetBytes(boolean).CopyTo(bResult, 0);
+            BitConverter.GetBytes(uid).CopyTo(bResult, 2);
 
             return bResult;
         }
 
         public LoginData ConvertToClass(byte[] data)
         {
-            //byte[] bUid = new byte[4];
-            //byte[] bUser_id = new byte[4];
-            //byte[] bUser_pwd = new byte[16];
-
-            //for (int i = 0; i < 4; i++)
-            //    bUid[i] = data[i + 2];
-            //for (int i = 0; i < 4; i++)
-            //    bUser_id[i] = data[i + 6];
-            //for (int i = 0; i < 16; i++)
-            //    bUser_pwd[i] = data[i + 10];
-
             LoginData dataResult = new LoginData();
             dataResult.Uid = BitConverter.ToInt32(data, 2);
             dataResult.User_id = BitConverter.ToInt32(data, 6);
@@ -120,14 +76,6 @@ namespace Newtalking_DAL_Data
     {
         public LoginData ConvertToClass(byte[] data)
         {
-            //byte[] bUid = new byte[4];
-            //byte[] bPassword = new byte[16];
-
-            //for (int i = 0; i < 4; i++)
-            //    bUid[i] = data[i + 2];
-            //for (int i = 0; i < 16; i++)
-            //    bPassword[i] = data[i + 10];
-
             LoginData dataResult = new LoginData();
             dataResult.Uid = BitConverter.ToInt32(data, 2);
             dataResult.User_password = BitConverter.ToString(data, 10, 16);
@@ -137,22 +85,14 @@ namespace Newtalking_DAL_Data
 
         public byte[] ConvertToBytes(LoginData data)
         {
-            short type = 3;
-            byte[] bMessageType = BitConverter.GetBytes(type);
-            byte[] bUid = BitConverter.GetBytes(data.Uid);
-            byte[] bUser_id = BitConverter.GetBytes(data.User_id);
-            byte[] bUser_password = Encoding.Default.GetBytes(data.User_password);
-
             byte[] bResult = new byte[26];
-            for (int i = 0; i < 2; i++)
-                bResult[i + 0] = bMessageType[i];
-            for (int i = 0; i < 4; i++)
-                bResult[i + 2] = bUid[i];
-            for (int i = 0; i < 4; i++)
-                bResult[i + 6] = bUser_id[i];
-            for (int i = 0; i < 16; i++)
-                bResult[i + 10] = bUser_password[i];
 
+            short type = 3;
+            BitConverter.GetBytes(type).CopyTo(bResult, 0);
+            BitConverter.GetBytes(data.Uid).CopyTo(bResult, 2);
+            BitConverter.GetBytes(data.User_id).CopyTo(bResult, 6);
+            Encoding.Default.GetBytes(data.User_password).CopyTo(bResult, 10);
+            
             return bResult;
         }
     }
@@ -174,25 +114,12 @@ namespace Newtalking_DAL_Data
             //4+2+4+24
             byte[] bResult = new byte[46];
 
-            byte[] bMessageType = BitConverter.GetBytes(data.MessageType);
-            byte[] bUid = BitConverter.GetBytes(data.Uid);
-            byte[] bUser_id = BitConverter.GetBytes(data.User_id);
-            byte[] bUser_sex = BitConverter.GetBytes(data.Sex);
-            byte[] bUser_birthdat = BitConverter.GetBytes(data.Birthday.Ticks);
-            byte[] bUser_phone = Encoding.Default.GetBytes(data.Phone);
-
-            for (int i = 0; i < bMessageType.Length; i++)
-                bResult[i + 0] = bMessageType[i];
-            for (int i = 0; i < bUid.Length; i++)
-                bResult[i + 2] = bUid[i];
-            for (int i = 0; i < bUser_id.Length; i++)
-                bResult[i + 6] = bUser_id[i];
-            for (int i = 0; i < bUser_sex.Length; i++)
-                bResult[i + 10] = bUser_sex[i];
-            for (int i = 0; i < bUser_birthdat.Length; i++)
-                bResult[i + 12] = bUser_birthdat[i];
-            for (int i = 0; i < bUser_phone.Length; i++)
-                bResult[i + 20] = bUser_phone[i];
+            BitConverter.GetBytes(data.MessageType).CopyTo(bResult, 0);
+            BitConverter.GetBytes(data.Uid).CopyTo(bResult, 2);
+            BitConverter.GetBytes(data.User_id).CopyTo(bResult, 6);
+            BitConverter.GetBytes(data.Sex).CopyTo(bResult, 10);
+            BitConverter.GetBytes(data.Birthday.Ticks).CopyTo(bResult, 12);
+            Encoding.Default.GetBytes(data.Phone).CopyTo(bResult, 20);
 
             return bResult;
         }
@@ -201,22 +128,6 @@ namespace Newtalking_DAL_Data
         {
             AccountInfo dataResult = new AccountInfo();
 
-            //byte[] bUid = new byte[4];
-            //byte[] bUser_id = new byte[4];
-            //byte[] bUser_sex = new byte[2];
-            //byte[] bUser_birthday = new byte[4];
-            //byte[] bUser_phone = new byte[24];
-
-            //for (int i = 0; i < 4; i++)
-            //    bUid[i] = data[i + 2];
-            //for (int i = 0; i < 4; i++)
-            //    bUser_id[i] = data[i + 6];
-            //for (int i = 0; i < 2; i++)
-            //    bUser_sex[i] = data[i + 10];
-            //for (int i = 0; i < 4; i++)
-            //    bUser_birthday[i] = data[i + 12];
-            //for (int i = 0; i < 24; i++)
-            //    bUser_phone[i] = data[i + 16];
             dataResult.User_id = BitConverter.ToInt32(data, 2);
             dataResult.Sex = BitConverter.ToInt16(data, 6);
             dataResult.Birthday = new DateTime(BitConverter.ToInt64(data, 12));
@@ -276,6 +187,29 @@ namespace Newtalking_DAL_Data
             sel.Sel_info = Encoding.Default.GetString(data, 6, 30);
 
             return sel;
+        }
+    }
+
+    public class AddFollowingConvert
+    {
+        public AddFollowingData ConvertToClass(byte[] data)
+        {
+            AddFollowingData add = new AddFollowingData();
+            add.Uid = BitConverter.ToInt32(data, 2);
+            add.User_id = BitConverter.ToInt32(data, 6);
+            add.Add_id = BitConverter.ToInt32(data, 10);
+
+            return add;
+        }
+
+        public byte[] ConvertToBytes(AddFollowingData data, bool isSucceed)
+        {
+            byte[] bResult = new byte[6];
+
+            BitConverter.GetBytes(data.User_id).CopyTo(bResult, 0);
+            BitConverter.GetBytes(isSucceed).CopyTo(bResult, 4);
+
+            return bResult;
         }
     }
 }

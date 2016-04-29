@@ -295,6 +295,38 @@ namespace Newtalking_DAL_Server
             }
         }
 
+        public bool AddFollowing(AddFollowingData data)
+        {
+            try
+            {
+                con.Open();
+
+                sql = "INSERT INTO following_list(user_id,follow_id) VALUES(" + data.User_id + "," + data.Add_id + ")";
+                MySQLCommand com = new MySQLCommand(sql, con);
+                com.ExecuteNonQuery();
+
+                sql = "SELECT * FROM black_list WHERE user_id=" + data.User_id + " and black_id=" + data.Add_id;
+                com = new MySQLCommand(sql, con);
+                MySQLDataReader reader = com.ExecuteReaderEx();
+                if(reader.Read())
+                {
+                    sql = "DELETE FROM black_list WHERE user_id=" + data.User_id + " and black_id=" + data.Add_id;
+                    com = new MySQLCommand(sql, con);
+                    com.ExecuteNonQuery();
+                }
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
         //public bool DelOverMessages(int bool)
 
 //         --插入用户

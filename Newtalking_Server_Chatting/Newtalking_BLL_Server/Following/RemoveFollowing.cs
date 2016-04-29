@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Newtalking_BLL_Server.Message
+namespace Newtalking_BLL_Server.Following
 {
-    class MessageImage
+    public class RemoveFollowing
     {
+
     }
 }

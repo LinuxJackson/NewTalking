@@ -8,7 +8,7 @@ using Newtalking_DAL_Server;
 using Data;
 using File_DAL;
 
-namespace Newtalking_BLL_Server
+namespace Newtalking_BLL_Server.Account
 {
     public class AccountLogin
     {
@@ -36,7 +36,7 @@ namespace Newtalking_BLL_Server
             DataPackage data = new DataPackage();
             data.Client = onlineUser.Client;
             data.Data = convert.ConvertToBytes(isLogined, loginData.Uid);
-            Sender sender = new Sender(onlineUser.Client);
+            Sender sender = new Sender();
 
             //[未升级] 发送所有消息
 

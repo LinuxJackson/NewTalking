@@ -5,6 +5,11 @@ using System.Text;
 using Model;
 using System.Threading;
 using System.Collections;
+using Newtalking_BLL_Server.Account;
+using Newtalking_BLL_Server.File;
+using Newtalking_BLL_Server.Message;
+using Newtalking_BLL_Server.UserInfo;
+using Newtalking_BLL_Server.Following;
 
 namespace Newtalking_BLL_Server
 {
@@ -29,7 +34,7 @@ namespace Newtalking_BLL_Server
                     switch (type)
                     {
                         case 1:            //信息[测试成功]
-                            Message message = new Message(data.Data, logined_ID);
+                           Message.Message message = new Message.Message(data.Data, logined_ID);
                             message.Send();
                             break;
                         case 4:        //获取账户信息[未测试]
@@ -62,12 +67,16 @@ namespace Newtalking_BLL_Server
                             searchAccount.Response();
                             break;
                         case 11:        //添加关注
+                            AddFollowing addFollowing = new AddFollowing(data);
+                            addFollowing.Response();
                             break;
                         case 12:        //撤销关注
                             break;
                         case 13:        //屏蔽
                             break;
                         case 14:        //图片消息[待定]
+                            break;
+                        case 15:        //获取关注列表
                             break;
                     }
                 }

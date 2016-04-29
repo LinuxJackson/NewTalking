@@ -7,7 +7,7 @@ using Newtalking_DAL_Server;
 using Newtalking_DAL_Data;
 using System.Net;
 
-namespace Newtalking_BLL_Server
+namespace Newtalking_BLL_Server.UserInfo
 {
     public class ReadUserInfo
     {
@@ -26,7 +26,7 @@ namespace Newtalking_BLL_Server
 
         public AccountInfo Response()
         {
-            Sender sender = new Sender(dataSend.Client);
+            Sender sender = new Sender();
             sender.SendMessage(dataSend);
             return accountInfo;
         }

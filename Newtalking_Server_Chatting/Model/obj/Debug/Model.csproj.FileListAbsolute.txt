@@ -22,3 +22,4 @@ E:\LinuxJackson\Newtalking_Server_Chatting\Model\bin\Debug\Model.pdb
 E:\LinuxJackson\Newtalking_Server_Chatting\Model\obj\Debug\ResolveAssemblyReference.cache
 E:\LinuxJackson\Newtalking_Server_Chatting\Model\obj\Debug\Model.dll
 E:\LinuxJackson\Newtalking_Server_Chatting\Model\obj\Debug\Model.pdb
+C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache

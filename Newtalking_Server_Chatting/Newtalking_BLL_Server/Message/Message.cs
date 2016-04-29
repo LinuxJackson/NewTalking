@@ -10,7 +10,7 @@ using System.Net;
 using System.Collections;
 using System.Threading;
 
-namespace Newtalking_BLL_Server
+namespace Newtalking_BLL_Server.Message
 {
     public class Message
     {
@@ -42,7 +42,7 @@ namespace Newtalking_BLL_Server
                     DataPackage dataPackage = new DataPackage();
                     dataPackage.Client = user.Client;
                     dataPackage.Data = bData;
-                    Sender sender = new Sender(dataPackage.Client);
+                    Sender sender = new Sender();
                     if (sender.SendMessage(dataPackage))
                         return;
                     else
