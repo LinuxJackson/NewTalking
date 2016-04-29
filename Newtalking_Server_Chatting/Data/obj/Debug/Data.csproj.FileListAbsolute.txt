@@ -17,3 +17,11 @@ C:\Users\Dell-\Desktop\Newtalking_Server_Chatting_Temp\Data\obj\Debug\Data.cspro
 C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Data\obj\Debug\Data.Properties.Resources.resources
 C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Data\obj\Debug\Data.csproj.GenerateResource.Cache
 C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+E:\LinuxJackson\Newtalking_Server_Chatting\Data\bin\Debug\Data.dll
+E:\LinuxJackson\Newtalking_Server_Chatting\Data\bin\Debug\Data.pdb
+E:\LinuxJackson\Newtalking_Server_Chatting\Data\obj\Debug\ResolveAssemblyReference.cache
+E:\LinuxJackson\Newtalking_Server_Chatting\Data\obj\Debug\Data.Properties.Resources.resources
+E:\LinuxJackson\Newtalking_Server_Chatting\Data\obj\Debug\GenerateResource.read.1.tlog
+E:\LinuxJackson\Newtalking_Server_Chatting\Data\obj\Debug\GenerateResource.write.1.tlog
+E:\LinuxJackson\Newtalking_Server_Chatting\Data\obj\Debug\Data.dll
+E:\LinuxJackson\Newtalking_Server_Chatting\Data\obj\Debug\Data.pdb

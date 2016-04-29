@@ -11,7 +11,7 @@ namespace Newtalking_BLL_Server
     public class Data_BLL
     {
         public bool isLogined = false;
-        private int logined_ID = 0;
+        public int logined_ID = 0;
 
         public void Analysis(DataPackage data)
         {

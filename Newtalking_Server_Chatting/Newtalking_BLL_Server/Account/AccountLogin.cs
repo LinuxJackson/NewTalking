@@ -69,7 +69,7 @@ namespace Newtalking_BLL_Server
         {
             lock (Data.Data.ArrOnlineUsers)
             {
-                Data.Data.ArrOnlineUsers.Add(onlineUser);
+                Data.Data.ArrOnlineUsers.Add(onlineUser.User_id, onlineUser);
             }
         }
     }

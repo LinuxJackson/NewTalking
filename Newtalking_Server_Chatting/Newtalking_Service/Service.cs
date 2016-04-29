@@ -38,10 +38,10 @@ namespace Newtalking_Service
                     Thread tdClientService = new Thread(delegate ()
                     {
                         TcpClient tcpUser = tcpClient;
+                        Data_BLL bll = new Data_BLL();
 
                         try
                         {
-                            Data_BLL bll = new Data_BLL();
                             while (true)
                             {
                                 Receiver receiver = new Receiver();
@@ -53,14 +53,8 @@ namespace Newtalking_Service
                             //[未升级] 从已登录用户中删除
                             lock (Data.Data.ArrOnlineUsers)
                             {
-                                List<OnlineUserProperties> arrTemp = new List<OnlineUserProperties>();
-                                for (int i = 0; i < Data.Data.ArrOnlineUsers.Count; i++)
-                                {
-                                    OnlineUserProperties onlineUser = (OnlineUserProperties)Data.Data.ArrOnlineUsers[i];
-                                    if (onlineUser.Client != tcpUser)
-                                        arrTemp.Add(Data.Data.ArrOnlineUsers[i]);
-                                }
-                                Data.Data.ArrOnlineUsers = arrTemp;
+                                if (bll.isLogined)
+                                    Data.Data.ArrOnlineUsers.Remove(bll.logined_ID);
                             }
                         }
                     });

@@ -32,3 +32,12 @@ C:\Users\Dell-\Desktop\Newtalking_Server_Chatting_Temp\Newtalking_DAL_Server\bin
 C:\Users\Dell-\Desktop\Newtalking_Server_Chatting_Temp\Newtalking_DAL_Server\bin\Debug\Model.pdb
 C:\Users\Dell-\Desktop\Newtalking_Server_Chatting_Temp\Newtalking_DAL_Server\bin\Debug\Server_Properties.pdb
 C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Newtalking_DAL_Server\bin\Debug\Model.pdb
+E:\LinuxJackson\Newtalking_Server_Chatting\Newtalking_DAL_Server\bin\Debug\Newtalking_DAL_Server.dll
+E:\LinuxJackson\Newtalking_Server_Chatting\Newtalking_DAL_Server\bin\Debug\Newtalking_DAL_Server.pdb
+E:\LinuxJackson\Newtalking_Server_Chatting\Newtalking_DAL_Server\bin\Debug\Model.dll
+E:\LinuxJackson\Newtalking_Server_Chatting\Newtalking_DAL_Server\bin\Debug\Server_Properties.dll
+E:\LinuxJackson\Newtalking_Server_Chatting\Newtalking_DAL_Server\bin\Debug\Model.pdb
+E:\LinuxJackson\Newtalking_Server_Chatting\Newtalking_DAL_Server\bin\Debug\Server_Properties.pdb
+E:\LinuxJackson\Newtalking_Server_Chatting\Newtalking_DAL_Server\obj\Debug\ResolveAssemblyReference.cache
+E:\LinuxJackson\Newtalking_Server_Chatting\Newtalking_DAL_Server\obj\Debug\Newtalking_DAL_Server.dll
+E:\LinuxJackson\Newtalking_Server_Chatting\Newtalking_DAL_Server\obj\Debug\Newtalking_DAL_Server.pdb

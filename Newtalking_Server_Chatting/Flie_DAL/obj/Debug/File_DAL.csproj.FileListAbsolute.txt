@@ -5,3 +5,10 @@ C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Flie_DAL\obj\Debug\Flie_DAL.dl
 C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Flie_DAL\obj\Debug\Flie_DAL.pdb
 C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Flie_DAL\bin\Debug\Model.dll
 C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Flie_DAL\bin\Debug\Model.pdb
+E:\LinuxJackson\Newtalking_Server_Chatting\Flie_DAL\bin\Debug\Flie_DAL.dll
+E:\LinuxJackson\Newtalking_Server_Chatting\Flie_DAL\bin\Debug\Flie_DAL.pdb
+E:\LinuxJackson\Newtalking_Server_Chatting\Flie_DAL\bin\Debug\Model.dll
+E:\LinuxJackson\Newtalking_Server_Chatting\Flie_DAL\bin\Debug\Model.pdb
+E:\LinuxJackson\Newtalking_Server_Chatting\Flie_DAL\obj\Debug\ResolveAssemblyReference.cache
+E:\LinuxJackson\Newtalking_Server_Chatting\Flie_DAL\obj\Debug\Flie_DAL.dll
+E:\LinuxJackson\Newtalking_Server_Chatting\Flie_DAL\obj\Debug\Flie_DAL.pdb

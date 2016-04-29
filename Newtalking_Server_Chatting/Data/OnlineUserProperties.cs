@@ -7,7 +7,7 @@ using System.Net.Sockets;
 
 namespace Data
 {
-    public class OnlineUserProperties
+    public struct OnlineUserProperties
     {
         private System.Net.Sockets.TcpClient client;
 

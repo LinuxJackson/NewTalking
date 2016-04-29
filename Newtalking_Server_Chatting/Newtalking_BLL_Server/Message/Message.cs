@@ -8,6 +8,7 @@ using Newtalking_DAL_Data;
 using Newtalking_DAL_Server;
 using System.Net;
 using System.Collections;
+using System.Threading;
 
 namespace Newtalking_BLL_Server
 {
@@ -29,18 +30,15 @@ namespace Newtalking_BLL_Server
             ArrayList arrOnlineUsers = new ArrayList();
             lock (Data.Data.ArrOnlineUsers)
             {
-                for (int i = 0; i < Data.Data.ArrOnlineUsers.Count; i++)
-                    arrOnlineUsers.Add(Data.Data.ArrOnlineUsers[i]);
-            }
-            bool isFoundOnline = false;
-
-            //[未升级] 数据库处理
-            for (int i = 0; i < arrOnlineUsers.Count; i++)
-            {
-                Data.OnlineUserProperties user = (Data.OnlineUserProperties)arrOnlineUsers[i];
-                if (msgData.Receiver_id == user.User_id)
+                if (!Data.Data.ArrOnlineUsers.ContainsKey(msgData.Receiver_id))
                 {
-                    isFoundOnline = true;
+                    SQLService sql = new SQLService();
+                    sql.InsertIntoOverMessages(msgData);
+                }
+                else
+                {
+                    Data.OnlineUserProperties user = Data.Data.ArrOnlineUsers[msgData.Receiver_id];
+
                     DataPackage dataPackage = new DataPackage();
                     dataPackage.Client = user.Client;
                     dataPackage.Data = bData;
@@ -53,17 +51,33 @@ namespace Newtalking_BLL_Server
                         //{
                         //    Data.Data.ArrSendingMessages.Add(msgData);
                         //}
-                        SQLService sql = new SQLService();
-                        sql.InsertIntoOverMessages(msgData);
+                        Thread td = new Thread(delegate()
+                        {
+                            SQLService sql = new SQLService();
+                            sql.InsertIntoOverMessages(msgData);
+                        });
+                        td.Start();
                     }
-                    break;
                 }
             }
-            if (!isFoundOnline)
-            {
-                SQLService sql = new SQLService();
-                sql.InsertIntoOverMessages(msgData);
-            }
+            //bool isFoundOnline = false;
+
+            ////[未升级] 数据库处理
+            //for (int i = 0; i < arrOnlineUsers.Count; i++)
+            //{
+            //    Data.OnlineUserProperties user = (Data.OnlineUserProperties)arrOnlineUsers[i];
+            //    if (msgData.Receiver_id == user.User_id)
+            //    {
+            //        break;
+            //    }
+            //}
+            //if (!isFoundOnline)
+            //{
+            //    SQLService sql = new SQLService();
+            //    sql.InsertIntoOverMessages(msgData);
+            //}
+
+            
                 //lock (Data.Data.ArrSendingMessages)
                 //{
                 //    Data.Data.ArrSendingMessages.Add(msgData);
