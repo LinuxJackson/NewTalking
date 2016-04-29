@@ -17,7 +17,6 @@ C:\Users\Dell-\Desktop\Newtalking_Server_Chatting_Temp\Model\obj\Debug\Model.dll
 C:\Users\Dell-\Desktop\Newtalking_Server_Chatting_Temp\Model\obj\Debug\Model.pdb
 C:\Users\Dell-\Desktop\Newtalking_Server_Chatting_Temp\Model\bin\Debug\Model.dll
 C:\Users\Dell-\Desktop\Newtalking_Server_Chatting_Temp\Model\bin\Debug\Model.pdb
-C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 E:\LinuxJackson\Newtalking_Server_Chatting\Model\bin\Debug\Model.dll
 E:\LinuxJackson\Newtalking_Server_Chatting\Model\bin\Debug\Model.pdb
 E:\LinuxJackson\Newtalking_Server_Chatting\Model\obj\Debug\ResolveAssemblyReference.cache

@@ -23,7 +23,7 @@ namespace Newtalking_Service
                 INI.FileCheck.CheckCreate();
                 try
                 {
-                    Property.SqlKey = INI.FileCheck.ReadSQLKey();
+                    Property.SqlKey = INI.FileCheck.ReadSQLKey().Trim();
                 }
                 catch
                 {

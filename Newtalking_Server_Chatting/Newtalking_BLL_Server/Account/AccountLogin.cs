@@ -69,7 +69,15 @@ namespace Newtalking_BLL_Server
         {
             lock (Data.Data.ArrOnlineUsers)
             {
-                Data.Data.ArrOnlineUsers.Add(onlineUser.User_id, onlineUser);
+                try
+                {
+                    if (!Data.Data.ArrOnlineUsers.ContainsKey(onlineUser.User_id))
+                        Data.Data.ArrOnlineUsers.Add(onlineUser.User_id, onlineUser);
+                }
+                catch
+                {
+
+                }
             }
         }
     }
