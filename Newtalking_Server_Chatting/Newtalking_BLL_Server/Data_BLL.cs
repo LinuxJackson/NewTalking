@@ -71,6 +71,7 @@ namespace Newtalking_BLL_Server
                             addFollowing.Response();
                             break;
                         case 12:        //撤销关注
+
                             break;
                         case 13:        //屏蔽
                             break;

@@ -190,19 +190,19 @@ namespace Newtalking_DAL_Data
         }
     }
 
-    public class AddFollowingConvert
+    public class FollowingConvert
     {
-        public AddFollowingData ConvertToClass(byte[] data)
+        public FollowingData ConvertToClass(byte[] data)
         {
-            AddFollowingData add = new AddFollowingData();
-            add.Uid = BitConverter.ToInt32(data, 2);
-            add.User_id = BitConverter.ToInt32(data, 6);
-            add.Add_id = BitConverter.ToInt32(data, 10);
+            FollowingData followingData = new FollowingData();
+            followingData.Uid = BitConverter.ToInt32(data, 2);
+            followingData.User_id = BitConverter.ToInt32(data, 6);
+            followingData.Following_id = BitConverter.ToInt32(data, 10);
 
-            return add;
+            return followingData;
         }
 
-        public byte[] ConvertToBytes(AddFollowingData data, bool isSucceed)
+        public byte[] ConvertToBytes(FollowingData data, bool isSucceed)
         {
             byte[] bResult = new byte[6];
 

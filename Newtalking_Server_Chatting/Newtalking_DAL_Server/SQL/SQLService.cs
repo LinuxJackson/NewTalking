@@ -295,27 +295,55 @@ namespace Newtalking_DAL_Server
             }
         }
 
-        public bool AddFollowing(AddFollowingData data)
+        public bool AddFollowing(FollowingData data)
         {
             try
             {
                 con.Open();
 
-                sql = "INSERT INTO following_list(user_id,follow_id) VALUES(" + data.User_id + "," + data.Add_id + ")";
+                sql = "INSERT INTO following_list(user_id,follow_id) VALUES(" + data.User_id + "," + data.Following_id + ")";
                 MySQLCommand com = new MySQLCommand(sql, con);
                 com.ExecuteNonQuery();
 
-                sql = "SELECT * FROM black_list WHERE user_id=" + data.User_id + " and black_id=" + data.Add_id;
+                sql = "SELECT * FROM black_list WHERE user_id=" + data.User_id + " and black_id=" + data.Following_id;
                 com = new MySQLCommand(sql, con);
                 MySQLDataReader reader = com.ExecuteReaderEx();
                 if(reader.Read())
                 {
-                    sql = "DELETE FROM black_list WHERE user_id=" + data.User_id + " and black_id=" + data.Add_id;
+                    sql = "DELETE FROM black_list WHERE user_id=" + data.User_id + " and black_id=" + data.Following_id;
                     com = new MySQLCommand(sql, con);
                     com.ExecuteNonQuery();
                 }
 
                 return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public bool RemoveFollowing(FollowingData data)
+        {
+            try
+            {
+                con.Open();
+
+                sql = "SELECT * FROM following_list where user_id=" + data.User_id + " and follow_id=" + data.Following_id;
+                MySQLCommand com = new MySQLCommand(sql, con);
+                MySQLDataReader reader = com.ExecuteReaderEx();
+                if(reader.Read())
+                {
+                    sql = "DELETE FROM following_list where user_id=" + data.User_id + " and follow_id=" + data.Following_id;
+                    com = new MySQLCommand(sql, con);
+                    com.ExecuteNonQuery();
+                    return true;
+                }
+                return false;
             }
             catch
             {

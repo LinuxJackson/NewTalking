@@ -5,11 +5,11 @@ using System.Text;
 
 namespace Model
 {
-    public class AddFollowingData
+    public class FollowingData
     {
         private int uid;
         private int user_id;
-        private int add_id;
+        private int following_id;
 
         public int Uid
         {
@@ -37,16 +37,16 @@ namespace Model
             }
         }
 
-        public int Add_id
+        public int Following_id
         {
             get
             {
-                return add_id;
+                return following_id;
             }
 
             set
             {
-                add_id = value;
+                following_id = value;
             }
         }
     }

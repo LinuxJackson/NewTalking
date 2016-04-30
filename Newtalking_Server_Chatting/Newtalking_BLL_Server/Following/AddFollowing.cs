@@ -11,13 +11,13 @@ namespace Newtalking_BLL_Server.Following
 {
     public class AddFollowing
     {
-        AddFollowingData add;
-        AddFollowingConvert converter = new AddFollowingConvert();
+        FollowingData followingData;
+        FollowingConvert converter = new FollowingConvert();
         TcpClient client;
 
         public AddFollowing(DataPackage data)
         {
-            add = converter.ConvertToClass(data.Data);
+            followingData = converter.ConvertToClass(data.Data);
             client = data.Client;
         }
 
@@ -30,7 +30,7 @@ namespace Newtalking_BLL_Server.Following
                 Sender sender = new Sender();
                 DataPackage dpk = new DataPackage();
                 dpk.Client = client;
-                dpk.Data = converter.ConvertToBytes(add, sql.AddFollowing(add));
+                dpk.Data = converter.ConvertToBytes(followingData, sql.AddFollowing(followingData));
 
                 return sender.SendMessage(dpk);
                 //bool isSucceed = sql.AddFollowing(add);
