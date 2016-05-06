@@ -20,8 +20,6 @@ namespace Newtalking_BLL_Server
 
         public void Analysis(DataPackage data)
         {
-            //性能待优化
-            Thread tdAnalysis = new Thread(delegate () {
 
             short type;
             byte[] bType = new byte[2];
@@ -29,6 +27,12 @@ namespace Newtalking_BLL_Server
             bType[0] = data.Data[0];
             bType[1] = data.Data[1];
             type = BitConverter.ToInt16(bType, 0);
+
+            if (type == 0)
+                Thread.CurrentThread.Abort();
+
+            //性能待优化
+            Thread tdAnalysis = new Thread(delegate () {
                 if (isLogined)
                 {
                     switch (type)
