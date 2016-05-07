@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Newtalking_BLL_Server.File
 {
-    public class SelUserImage
+    internal class SelUserImage
     {
 
     }

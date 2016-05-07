@@ -8,20 +8,18 @@ using Newtalking_DAL_Server;
 
 namespace Newtalking_BLL_Server.Account
 {
-    public class SearchAccount
+    internal class SearchAccount
     {
         System.Net.Sockets.TcpClient client;
         SelectAccount selAcc;
-        SelectAccountConvert converter = new SelectAccountConvert();
 
-        public SearchAccount(DataPackage dpk)
+        internal SearchAccount(DataPackage dpk)
         {
-            SelectAccountConvert converter = new SelectAccountConvert();
-            selAcc = converter.ConvertToClass(dpk.Data);
+            selAcc = SelectAccountConvert.ConvertToClass(dpk.Data);
             client = dpk.Client;
         }
 
-        public bool Response()
+        internal bool Response()
         {
             try
             {
@@ -32,8 +30,7 @@ namespace Newtalking_BLL_Server.Account
                 {
                     Sender sender = new Sender();
                     DataPackage dpk = new DataPackage();
-                    AccountInfoConvet converter = new AccountInfoConvet();
-                    dpk.Data = converter.ConvertToBytes((AccountInfo)obj);
+                    AccountInfoConvet.ConvertToBytes((AccountInfo)obj);
                     dpk.Client = client;
                     sender.SendMessage(dpk);
                 }

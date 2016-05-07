@@ -10,25 +10,24 @@ using File_DAL;
 
 namespace Newtalking_BLL_Server.Account
 {
-    public class AccountRequest
+    internal class AccountRequest
     {
-        AccountRequestConvert convert = new AccountRequestConvert();
         DataPackage dataResponse = new DataPackage();
 
-        public AccountRequest(DataPackage data)
+        internal AccountRequest(DataPackage data)
         {
             SQLService sql = new SQLService();
             dataResponse.Client = data.Client;
 
-            LoginData loginData = convert.ConvertToClass(data.Data);
+            LoginData loginData = AccountRequestConvert.ConvertToClass(data.Data);
             loginData.User_id = sql.AccountRequest(loginData.User_password);
 
-            dataResponse.Data = convert.ConvertToBytes(loginData);
+            dataResponse.Data = AccountRequestConvert.ConvertToBytes(loginData);
             FileCheck fileCheck = new FileCheck();
             fileCheck.CheckCreateUserDir(loginData.User_id);
         }
 
-        public void Response()
+        internal void Response()
         {
             Sender sender = new Sender();
             sender.SendMessage(dataResponse);

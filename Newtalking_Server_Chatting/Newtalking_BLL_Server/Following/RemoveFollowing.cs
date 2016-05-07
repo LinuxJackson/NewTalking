@@ -9,19 +9,18 @@ using System.Net.Sockets;
 
 namespace Newtalking_BLL_Server.Following
 {
-    public class RemoveFollowing
+    internal class RemoveFollowing
     {
         TcpClient client;
         FollowingData followingData;
-        FollowingConvert converter = new FollowingConvert();
 
-        public RemoveFollowing(DataPackage data)
+        internal RemoveFollowing(DataPackage data)
         {
             client = data.Client;
-            followingData = converter.ConvertToClass(data.Data);
+            followingData = FollowingConvert.ConvertToClass(data.Data);
         }
 
-        public bool Response()
+        internal bool Response()
         {
             try
             {
@@ -31,7 +30,7 @@ namespace Newtalking_BLL_Server.Following
                 Sender sender = new Sender();
                 DataPackage dpk = new DataPackage();
                 dpk.Client = client;
-                dpk.Data = converter.ConvertToBytes(followingData, isSucceed);
+                dpk.Data = FollowingConvert.ConvertToBytes(followingData, isSucceed);
                 sender.SendMessage(dpk);
 
                 return true;

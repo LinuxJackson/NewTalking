@@ -9,20 +9,19 @@ using System.Collections;
 
 namespace Newtalking_BLL_Server.Message
 {
-    public class MessageFresh
+    internal class MessageFresh
     {
         DataPackage data;
         RefreshRequest rr;
 
-        public MessageFresh(DataPackage dpk, int user_id)
+        internal MessageFresh(DataPackage dpk, int user_id)
         {
             data = dpk;
-            RefreshRequestConvert converter = new RefreshRequestConvert();
-            rr = converter.ConvertToClass(dpk.Data);
+            rr = RefreshRequestConvert.ConvertToClass(dpk.Data);
             rr.User_id = user_id;
         }
 
-        public bool Response()
+        internal bool Response()
         {
             SQLService sql = new SQLService();
             List<MessageData> arrMsg = sql.SelOverMessages(rr.User_id);
@@ -31,8 +30,7 @@ namespace Newtalking_BLL_Server.Message
             foreach (object obj in arrMsg)
             {
                 MessageData msg = (MessageData)obj;
-                MessageDataConvert converter = new MessageDataConvert();
-                byte[] dataSend = converter.ConvertToBytes(msg);
+                byte[] dataSend = MessageDataConvert.ConvertToBytes(msg);
                 DataPackage dpk = new DataPackage();
                 dpk.Data = dataSend;
                 dpk.Client = data.Client;

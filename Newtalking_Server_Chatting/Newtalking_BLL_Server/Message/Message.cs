@@ -12,20 +12,19 @@ using System.Threading;
 
 namespace Newtalking_BLL_Server.Message
 {
-    public class Message
+    internal class Message
     {
         byte[] bData;
         MessageData msgData = new MessageData();
-        MessageDataConvert convert = new MessageDataConvert();
 
-        public Message(byte[] data, int user_id)
+        internal Message(byte[] data, int user_id)
         {
-            msgData = convert.ConvertToClass(data);
+            msgData = MessageDataConvert.ConvertToClass(data);
             bData = data;
             msgData.User_id = user_id;
         }
 
-        public void Send()
+        internal void Send()
         {
             ArrayList arrOnlineUsers = new ArrayList();
             lock (Data.Data.ArrOnlineUsers)

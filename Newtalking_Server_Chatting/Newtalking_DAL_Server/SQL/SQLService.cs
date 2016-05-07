@@ -10,6 +10,13 @@ using System.Collections;
 
 namespace Newtalking_DAL_Server
 {
+    //防注入修改：参数化查询
+    //using (SqlCommand Cmd = Conn.CreateCommand())
+    //            {
+    //                Cmd.CommandText = "select * from TB_Users where passport=@UN and password=@PWD";
+    //                Cmd.Parameters.Add(new SqlParameter("UN", Passport));
+    //                Cmd.Parameters.Add(new SqlParameter("PWD", Password));
+
     public class SQLService
     {
         string sql = "";

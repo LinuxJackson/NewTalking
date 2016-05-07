@@ -9,22 +9,21 @@ using System.Net;
 
 namespace Newtalking_BLL_Server.UserInfo
 {
-    public class ReadUserInfo
+    internal class ReadUserInfo
     {
         AccountInfo accountInfo = new AccountInfo();
         DataPackage dataSend = new DataPackage();
 
-        public ReadUserInfo(DataPackage data)
+        internal ReadUserInfo(DataPackage data)
         {
-            AccountInfoConvet convert = new AccountInfoConvet();
-            accountInfo = convert.ConvertToClass(data.Data);
+            accountInfo = AccountInfoConvet.ConvertToClass(data.Data);
             SQLService sql = new SQLService();
             accountInfo = sql.AccountInfoReader(accountInfo.User_id);
             dataSend.Client = data.Client;
-            dataSend.Data = convert.ConvertToBytes(accountInfo);
+            dataSend.Data = AccountInfoConvet.ConvertToBytes(accountInfo);
         }
 
-        public AccountInfo Response()
+        internal AccountInfo Response()
         {
             Sender sender = new Sender();
             sender.SendMessage(dataSend);

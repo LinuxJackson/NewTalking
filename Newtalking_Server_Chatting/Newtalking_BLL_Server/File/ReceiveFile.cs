@@ -9,19 +9,18 @@ using Model;
 
 namespace Newtalking_BLL_Server.File
 {
-    public class ReceiveFile
+    internal class ReceiveFile
     {
         ReceiveFileRequest rfr = new ReceiveFileRequest();
         System.Net.Sockets.TcpClient remoteClient;
 
-        public ReceiveFile(DataPackage data)
+        internal ReceiveFile(DataPackage data)
         {
-            FileRequestConvert frc = new FileRequestConvert();
-            rfr = frc.ConvertToData_Receive(data.Data);
+            rfr = FileRequestConvert.ConvertToData_Receive(data.Data);
             remoteClient = data.Client;
         }
 
-        public bool Receive()
+        internal bool Receive()
         {
             Newtalking_DAL_Server.ReceiveFile rece = new Newtalking_DAL_Server.ReceiveFile(remoteClient);
             FileCheck fileCheck = new FileCheck();

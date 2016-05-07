@@ -10,32 +10,30 @@ using File_DAL;
 
 namespace Newtalking_BLL_Server.Account
 {
-    public class AccountLogin
+    internal class AccountLogin
     {
-        public LoginData loginData = new LoginData();
-        LoginDataConvert convert = new LoginDataConvert();
+        internal LoginData loginData = new LoginData();
         bool isLogined = false;
         OnlineUserProperties onlineUser = new OnlineUserProperties();
 
-        public AccountLogin(DataPackage data)
+        internal AccountLogin(DataPackage data)
         {
-            LoginDataConvert convert = new LoginDataConvert();
-            loginData = convert.ConvertToClass(data.Data);
+            loginData = LoginDataConvert.ConvertToClass(data.Data);
             onlineUser.Client = data.Client;
             onlineUser.User_id = loginData.User_id;
         }
 
-        public bool Login()
+        internal bool Login()
         {
             SQLService sql = new SQLService();
             return sql.Login(loginData);
         }
 
-        public bool Respect()
+        internal bool Respect()
         {
             DataPackage data = new DataPackage();
             data.Client = onlineUser.Client;
-            data.Data = convert.ConvertToBytes(isLogined, loginData.Uid);
+            data.Data = LoginDataConvert.ConvertToBytes(isLogined, loginData.Uid);
             Sender sender = new Sender();
 
             //[未升级] 发送所有消息
@@ -65,7 +63,7 @@ namespace Newtalking_BLL_Server.Account
             return sender.SendMessage(data);
         }
 
-        public void AddToOnlineUserList()
+        internal void AddToOnlineUserList()
         {
             lock (Data.Data.ArrOnlineUsers)
             {

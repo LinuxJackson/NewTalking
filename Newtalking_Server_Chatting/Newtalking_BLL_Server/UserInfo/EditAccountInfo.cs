@@ -9,19 +9,18 @@ using System.Net;
 
 namespace Newtalking_BLL_Server.UserInfo
 {
-    public class EditAccountInfo
+    internal class EditAccountInfo
     {
         AccountInfo accountInfo = new AccountInfo();
         DataPackage dataSend = new DataPackage();
 
-        public EditAccountInfo(DataPackage data)
+        internal EditAccountInfo(DataPackage data)
         {
-            AccountInfoConvet convert = new AccountInfoConvet();
-            accountInfo = convert.ConvertToClass(data.Data);
+            accountInfo = AccountInfoConvet.ConvertToClass(data.Data);
             dataSend.Client = data.Client;
         }
 
-        public void Response()
+        internal void Response()
         {
             SQLService sql = new SQLService();
             byte[] bIsSucceed = BitConverter.GetBytes(sql.AccountInfoEditor(accountInfo));

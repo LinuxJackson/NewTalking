@@ -6,9 +6,9 @@ using Model;
 
 namespace Newtalking_DAL_Data
 {
-    public class MessageDataConvert
+    static public class MessageDataConvert
     {
-        public byte[] ConvertToBytes(MessageData data)
+        static public byte[] ConvertToBytes(MessageData data)
         {
             byte[] bResult = new byte[1452];
 
@@ -22,7 +22,7 @@ namespace Newtalking_DAL_Data
             return bResult;
         }
 
-        public MessageData ConvertToClass(byte[] bReceived)
+        static public MessageData ConvertToClass(byte[] bReceived)
         {
             MessageData dataResult = new MessageData();
 
@@ -43,9 +43,9 @@ namespace Newtalking_DAL_Data
         }
     }
 
-    public class LoginDataConvert
+    static public class LoginDataConvert
     {
-        public byte[] ConvertToBytes(bool boolean, int uid)
+        static public byte[] ConvertToBytes(bool boolean, int uid)
         {
             byte[] bResult = new byte[6];
             BitConverter.GetBytes(boolean).CopyTo(bResult, 0);
@@ -54,7 +54,7 @@ namespace Newtalking_DAL_Data
             return bResult;
         }
 
-        public LoginData ConvertToClass(byte[] data)
+        static public LoginData ConvertToClass(byte[] data)
         {
             LoginData dataResult = new LoginData();
             dataResult.Uid = BitConverter.ToInt32(data, 2);
@@ -72,9 +72,9 @@ namespace Newtalking_DAL_Data
         }
     }
 
-    public class AccountRequestConvert
+    static public class AccountRequestConvert
     {
-        public LoginData ConvertToClass(byte[] data)
+        static public LoginData ConvertToClass(byte[] data)
         {
             LoginData dataResult = new LoginData();
             dataResult.Uid = BitConverter.ToInt32(data, 2);
@@ -88,7 +88,7 @@ namespace Newtalking_DAL_Data
             return dataResult;
         }
 
-        public byte[] ConvertToBytes(LoginData data)
+        static public byte[] ConvertToBytes(LoginData data)
         {
             byte[] bResult = new byte[26];
 
@@ -101,20 +101,20 @@ namespace Newtalking_DAL_Data
             return bResult;
         }
     }
-//    CREATE DATABASE NewTalking;
-//CREATE TABLE users(user_id INTEGER PRIMARY KEY AUTO_INCREMENT, user_name VARCHAR(30) NOT NULL, user_password VARCHAR(20) NOT NULL);
-//CREATE TABLE users_information(user_id INTEGER, user_sex CHAR(2), user_birthday INTEGER, user_phone INTEGER, FOREIGN KEY(user_id) REFERENCES users(user_id));
+    //    CREATE DATABASE NewTalking;
+    //CREATE TABLE users(user_id INTEGER PRIMARY KEY AUTO_INCREMENT, user_name VARCHAR(30) NOT NULL, user_password VARCHAR(20) NOT NULL);
+    //CREATE TABLE users_information(user_id INTEGER, user_sex CHAR(2), user_birthday INTEGER, user_phone INTEGER, FOREIGN KEY(user_id) REFERENCES users(user_id));
 
-//INSERT INTO users(user_name, user_password) VALUES('大明', 123456);
-//    INSERT INTO users(user_name, user_password) VALUES('小明', 123456);
+    //INSERT INTO users(user_name, user_password) VALUES('大明', 123456);
+    //    INSERT INTO users(user_name, user_password) VALUES('小明', 123456);
 
-//    INSERT INTO users_information VALUES(1, '男', 946659661, 10086);
-//    INSERT INTO users_information VALUES(2, '男', 946659662, 10010);
+    //    INSERT INTO users_information VALUES(1, '男', 946659661, 10086);
+    //    INSERT INTO users_information VALUES(2, '男', 946659662, 10010);
 
-//    SELECT* FROM users INNER JOIN users_information ON users.user_id = users_information.user_id;
-    public class AccountInfoConvet
+    //    SELECT* FROM users INNER JOIN users_information ON users.user_id = users_information.user_id;
+    static public class AccountInfoConvet
     {
-        public byte[] ConvertToBytes(AccountInfo data)
+        static public byte[] ConvertToBytes(AccountInfo data)
         {
             //4+2+4+24
             byte[] bResult = new byte[46];
@@ -129,7 +129,7 @@ namespace Newtalking_DAL_Data
             return bResult;
         }
 
-        public AccountInfo ConvertToClass(byte[] data)
+        static public AccountInfo ConvertToClass(byte[] data)
         {
             AccountInfo dataResult = new AccountInfo();
 
@@ -149,9 +149,9 @@ namespace Newtalking_DAL_Data
         }
     }
 
-    public class FileRequestConvert
+    static public class FileRequestConvert
     {
-        public FileRequest ConvertToClass_Send(byte[] data)
+        static public FileRequest ConvertToClass_Send(byte[] data)
         {
             FileRequest fileRequest = new FileRequest();
             fileRequest.Uid = BitConverter.ToInt32(data, 2);
@@ -161,7 +161,7 @@ namespace Newtalking_DAL_Data
             return fileRequest;
         }
 
-        public ReceiveFileRequest ConvertToData_Receive(byte[] data)
+        static public ReceiveFileRequest ConvertToData_Receive(byte[] data)
         {
             ReceiveFileRequest receiveFile = new ReceiveFileRequest();
             receiveFile.User_id = BitConverter.ToInt32(data, 0);
@@ -171,9 +171,9 @@ namespace Newtalking_DAL_Data
         }
     }
 
-    public class RefreshRequestConvert
+    static public class RefreshRequestConvert
     {
-        public RefreshRequest ConvertToClass(byte[] data)
+        static public RefreshRequest ConvertToClass(byte[] data)
         {
             RefreshRequest rr = new RefreshRequest();
             rr.Uid = BitConverter.ToInt32(data, 2);
@@ -183,9 +183,9 @@ namespace Newtalking_DAL_Data
         }
     }
 
-    public class SelectAccountConvert
+    static public class SelectAccountConvert
     {
-        public SelectAccount ConvertToClass(byte[] data)
+        static public SelectAccount ConvertToClass(byte[] data)
         {
             SelectAccount sel = new SelectAccount();
             sel.Uid = BitConverter.ToInt32(data, 2);
@@ -195,9 +195,9 @@ namespace Newtalking_DAL_Data
         }
     }
 
-    public class FollowingConvert
+    static public class FollowingConvert
     {
-        public FollowingData ConvertToClass(byte[] data)
+        static public FollowingData ConvertToClass(byte[] data)
         {
             FollowingData followingData = new FollowingData();
             followingData.Uid = BitConverter.ToInt32(data, 2);
@@ -207,7 +207,7 @@ namespace Newtalking_DAL_Data
             return followingData;
         }
 
-        public byte[] ConvertToBytes(FollowingData data, bool isSucceed)
+        static public byte[] ConvertToBytes(FollowingData data, bool isSucceed)
         {
             byte[] bResult = new byte[6];
 

@@ -20,13 +20,7 @@ namespace Newtalking_BLL_Server
 
         public void Analysis(DataPackage data)
         {
-
-            short type;
-            byte[] bType = new byte[2];
-
-            bType[0] = data.Data[0];
-            bType[1] = data.Data[1];
-            type = BitConverter.ToInt16(bType, 0);
+            short type = BitConverter.ToInt16(data.Data, 0);
 
             if (type == 0)
                 Thread.CurrentThread.Abort();

@@ -10,25 +10,24 @@ using Newtalking_DAL_Data;
 
 namespace Newtalking_BLL_Server.File
 {
-    public class SendFile
+    internal class SendFile
     {
         DataPackage dataPack;
         FileStream fsSend;
         byte[] bPackBegin = new byte[4];
         string path;
 
-        public SendFile(DataPackage dataPackTemp)
+        internal SendFile(DataPackage dataPackTemp)
         {
             dataPack = dataPackTemp;
             Buffer.BlockCopy(dataPackTemp.Data, 2, bPackBegin, 0, 4);
 
             FileCheck fileCheck = new FileCheck();
-            FileRequestConvert fileRc = new FileRequestConvert();
-            FileRequest fr = fileRc.ConvertToClass_Send(dataPackTemp.Data);
+            FileRequest fr = FileRequestConvert.ConvertToClass_Send(dataPackTemp.Data);
             path = fileCheck.SelUserFileDir(fr.User_id, fr.FileName);
         }
 
-        public bool Send()
+        internal bool Send()
         {
             if (path == "failed")
                 return false;
