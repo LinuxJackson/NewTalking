@@ -78,8 +78,13 @@ namespace Newtalking_DAL_Data
         {
             LoginData dataResult = new LoginData();
             dataResult.Uid = BitConverter.ToInt32(data, 2);
-            dataResult.User_password = BitConverter.ToString(data, 10, 16);
-
+            string sTemp = Encoding.Default.GetString(data, 6, 10);
+            foreach (char c in sTemp)
+            {
+                if (c == '\0')
+                    break;
+                dataResult.User_password += c;
+            }
             return dataResult;
         }
 
