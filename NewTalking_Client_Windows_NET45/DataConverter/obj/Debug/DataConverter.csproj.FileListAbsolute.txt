@@ -1,0 +1,7 @@
+C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\DataConverter\bin\Debug\DataConverter.dll
+C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\DataConverter\bin\Debug\DataConverter.pdb
+C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\DataConverter\bin\Debug\Model.dll
+C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\DataConverter\bin\Debug\Model.pdb
+C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\DataConverter\obj\Debug\DataConverter.csprojResolveAssemblyReference.cache
+C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\DataConverter\obj\Debug\DataConverter.dll
+C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\DataConverter\obj\Debug\DataConverter.pdb

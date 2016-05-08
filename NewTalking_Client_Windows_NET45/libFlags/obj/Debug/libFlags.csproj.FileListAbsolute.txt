@@ -1,0 +1,5 @@
+C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libFlags\bin\Debug\libFlags.dll
+C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libFlags\bin\Debug\libFlags.pdb
+C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libFlags\obj\Debug\libFlags.csprojResolveAssemblyReference.cache
+C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libFlags\obj\Debug\libFlags.dll
+C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libFlags\obj\Debug\libFlags.pdb

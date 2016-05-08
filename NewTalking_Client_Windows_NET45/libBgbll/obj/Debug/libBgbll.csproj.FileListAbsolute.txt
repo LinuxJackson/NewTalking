@@ -1,0 +1,15 @@
+C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libBgbll\obj\Debug\libBgbll.csprojResolveAssemblyReference.cache
+C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libBgbll\bin\Debug\libBgbll.dll
+C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libBgbll\bin\Debug\libBgbll.pdb
+C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libBgbll\bin\Debug\DataConverter.dll
+C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libBgbll\bin\Debug\libData.dll
+C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libBgbll\bin\Debug\libFlags.dll
+C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libBgbll\bin\Debug\libNet.dll
+C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libBgbll\bin\Debug\Model.dll
+C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libBgbll\bin\Debug\DataConverter.pdb
+C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libBgbll\bin\Debug\libData.pdb
+C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libBgbll\bin\Debug\libFlags.pdb
+C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libBgbll\bin\Debug\libNet.pdb
+C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libBgbll\bin\Debug\Model.pdb
+C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libBgbll\obj\Debug\libBgbll.dll
+C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libBgbll\obj\Debug\libBgbll.pdb
