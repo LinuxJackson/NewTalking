@@ -19,12 +19,15 @@ using NewTalking.Data;
 using libBgbll.Login;
 using libData;
 using DataConverter;
+using NewTalking.Anim.LoginWindow;
 
 namespace NewTalking
 {
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
     /// </summary>
+    /// 
+
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -36,11 +39,12 @@ namespace NewTalking
         {
             try
             {
+                LabelOpacity.AutoTimesShow(this.lblState, 1000, 1.5, true, "Connecting...");
                 Task<bool> conn = ConnectServer.ConnectAsync();
                 bool IsConnected = await conn;
                 if (IsConnected)
                 {
-                    lblState.Content = "连接成功";
+                    LabelOpacity.AutoTimesShow(this.lblState, 3, 0.7, true, "Connected");
                     while (true)
                     {
                         byte[] rece = await ReceiveData.Receive();
@@ -48,16 +52,17 @@ namespace NewTalking
                     }
                 }
                 else
-                    lblState.Content = "连接异常";
+                    LabelOpacity.AutoTimesShow(this.lblState, 3, 0.7, true, "Connection Failed");
             }
             catch
             {
-                this.lblState.Content = "连接异常";
+                LabelOpacity.AutoTimesShow(this.lblState, 3, 0.7, true, "Connection Failed");
             }
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            txtUser_id.Focus();
             Connect();
         }
 
@@ -67,29 +72,38 @@ namespace NewTalking
             lblBtn_MouseDown(sender, e);
         }
 
+        private delegate void ChangeTextFunc(Label lbl, string text);
+        private void ChangeText(Label lbl, string text)
+        {
+            LabelOpacity.AutoTimesShow(lbl, 3, 0.5, false, "User password is not correct!");
+        }
+
         private void Login_Form()
         {
-            lblBtnLogin.IsEnabled = false;
-            LoginData LoginData = new LoginData();
-            LoginData.User_id = Int32.Parse(txtUser_id.Text);
-            LoginData.User_password = txtUser_pwd.Text;
+            if (CheckBlanks())
+            {
+                lblBtnLogin.IsEnabled = false;
+                LoginData LoginData = new LoginData();
+                LoginData.User_id = Int32.Parse(txtUser_id.Text);
+                LoginData.User_password = txtUser_pwd.Text;
 
-            LoginData.Uid = CallBackNum.CallBackIndex = CallBackNum.CallBackIndex + 1;
+                LoginData.Uid = CallBackNum.CallBackIndex = CallBackNum.CallBackIndex + 1;
 
-            FuncReceiveData func = delegate (byte[] data)
-             {
-                 LoginData_Re loginData = LoginDataConvert.ConvertToClass(data);
-                 if (loginData.IsLogined)
+                FuncReceiveData func = delegate (byte[] data)
                  {
-                     this.lblState.Content = "Welcome!";
-                 }
-                 else
-                 {
-                     this.lblState.Content = "Failed!";
-                     this.lblBtnLogin.IsEnabled = true;
-                 }
-             };
-            Login.UserLogin(func, LoginData);
+                     LoginData_Re loginData = LoginDataConvert.ConvertToClass(data);
+                     if (loginData.IsLogined)
+                     {
+                         this.lblState.Dispatcher.BeginInvoke(new ChangeTextFunc(ChangeText), lblState, "User password is not correct!");
+                     }
+                     else
+                     {
+                         this.lblState.Dispatcher.BeginInvoke(new ChangeTextFunc(ChangeText), lblState, "User password is not correct!");
+                         this.lblBtnLogin.IsEnabled = true;
+                     }
+                 };
+                Login.UserLogin(func, LoginData);
+            }
         }
 
         private void lblBtn_MouseEnter(object sender, MouseEventArgs e)
@@ -108,6 +122,57 @@ namespace NewTalking
         {
             Label lbl = (Label)sender;
             lbl.Foreground = new SolidColorBrush(Colors.LightBlue);
+        }
+
+        private void lblFillUser_pwd_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            txtUser_pwd.Focus();
+        }
+
+        private void lblFillUser_id_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            txtUser_id.Focus();
+        }
+
+        private void txtUser_id_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtUser_id.Text != "")
+                lblFillUser_id.Visibility = Visibility.Hidden;
+            else
+                lblFillUser_id.Visibility = Visibility.Visible;
+        }
+
+        private void txtUser_pwd_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtUser_id.Text != "")
+                lblFillUser_pwd.Visibility = Visibility.Hidden;
+            else
+                lblFillUser_pwd.Visibility = Visibility.Visible;
+        }
+
+        private void txtUserKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                if (CheckBlanks())
+                    Login_Form();
+            }
+        }
+
+        private bool CheckBlanks()
+        {
+            int a;
+            if (!Int32.TryParse(txtUser_id.Text, out a))
+            {
+                LabelOpacity.AutoTimesShow(lblState, 2, 0.5, false, "User id is not correct!");
+                return false;
+            }
+            if (txtUser_pwd.Text == "" || txtUser_pwd.Text.Length > 16)
+            {
+                LabelOpacity.AutoTimesShow(lblState, 2, 0.5, false, "User password is not correct!");
+                return false;
+            }
+            return true;
         }
     }
 }
