@@ -13,6 +13,8 @@ CREATE TABLE black_list(user_id INTEGER, black_id INTEGER);
 CREATE TABLE user_images(user_id INTEGER, file_name VARCHAR(255))
 
 ;
+CREATE TABLE files(user_id INTEGER, file_name VARCHAR(225), file_key CHAR(16));
+
 --INSERT INTO users(user_name, user_password) VALUES ('大明', 123456);
 
 --INSERT INTO users(user_name, user_password) VALUES ('小明', 123456);

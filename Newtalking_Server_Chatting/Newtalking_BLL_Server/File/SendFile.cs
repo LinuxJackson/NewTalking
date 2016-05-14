@@ -17,6 +17,7 @@ namespace Newtalking_BLL_Server.File
         FileStream fsSend;
         byte[] bPackBegin = new byte[4];
         string path;
+        bool isAccess = true;
 
         internal SendFile(DataPackage dataPackTemp)
         {
@@ -26,16 +27,24 @@ namespace Newtalking_BLL_Server.File
             FileCheck fileCheck = new FileCheck();
             FileRequest fr = FileRequestConvert.ConvertToClass_Send(dataPackTemp.Data);
             path = fileCheck.SelUserFileDir(fr.User_id, fr.FileName);
+
+            SQLService sql = new SQLService();
+            if (sql.CheckFileKey(fr.User_id, fr.FileName, fr.FileKey))
+                isAccess = false;
         }
 
         internal bool Send()
         {
-            if (path == FileFlags.FileExistsFailedFlag)
-                return false;
-            else
-                fsSend = new FileStream(path, FileMode.Open, FileAccess.Read);
-            Newtalking_DAL_Server.SendFile sender = new Newtalking_DAL_Server.SendFile(dataPack.Client, fsSend, bPackBegin);
-            return sender.Send();
+            if (isAccess)
+            {
+                if (path == FileFlags.FileExistsFailedFlag)
+                    return false;
+                else
+                    fsSend = new FileStream(path, FileMode.Open, FileAccess.Read);
+                Newtalking_DAL_Server.SendFile sender = new Newtalking_DAL_Server.SendFile(dataPack.Client, fsSend, bPackBegin);
+                return sender.Send();
+            }
+            return false;
         }
     }
 }

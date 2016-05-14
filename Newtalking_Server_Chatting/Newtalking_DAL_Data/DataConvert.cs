@@ -167,8 +167,16 @@ namespace Newtalking_DAL_Data
             FileRequest fileRequest = new FileRequest();
             fileRequest.Uid = BitConverter.ToInt32(data, 2);
             fileRequest.User_id = BitConverter.ToInt32(data, 6);
-            fileRequest.FileName = BitConverter.ToString(data, 10);
 
+            string temp = Encoding.Default.GetString(data, 10, 255);
+            foreach(char c in temp)
+            {
+                if (c == '\0')
+                    break;
+                fileRequest.FileName += c;
+            }
+
+            fileRequest.FileKey = Encoding.Default.GetString(data, 265, 16);
             return fileRequest;
         }
 

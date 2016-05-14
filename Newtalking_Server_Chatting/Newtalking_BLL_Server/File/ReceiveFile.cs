@@ -34,6 +34,14 @@ namespace Newtalking_BLL_Server.File
                     writer.Write(data);
                 } while (data.Length == 1024);
                 writer.fileStream.Close();
+
+                string key = "";
+                Random random = new Random();
+                for (int i = 0; i < 16; i++)
+                    key += random.Next(0, 10).ToString();
+
+                SQLService sql = new SQLService();
+                sql.UpLoadFile(rfr.User_id, rfr.File_name, key);
                 return true;
             }
             catch

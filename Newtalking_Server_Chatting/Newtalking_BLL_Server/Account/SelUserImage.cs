@@ -9,16 +9,16 @@ using File_DAL;
 using Newtalking_DAL_Data;
 using Flags;
 
-namespace Newtalking_BLL_Server.File
+namespace Newtalking_BLL_Server.Account
 {
-    internal class SendUserImage
+    internal class SelUserImage
     {
         DataPackage dataPack;
         FileStream fsSend;
         byte[] bPackBegin = new byte[4];
         string path;
 
-        internal SendUserImage(DataPackage dataPackTemp)
+        internal SelUserImage(DataPackage dataPackTemp)
         {
             //修改为数据库查询后传入
             dataPack = dataPackTemp;

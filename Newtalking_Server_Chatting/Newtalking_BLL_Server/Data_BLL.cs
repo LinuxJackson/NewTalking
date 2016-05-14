@@ -53,7 +53,7 @@ namespace Newtalking_BLL_Server
                             receFile.Receive();
                             break;
                         case 8:         //用户头像申请[未测试]
-                            SendUserImage sendUserImage = new SendUserImage(data);
+                            SelUserImage sendUserImage = new SelUserImage(data);
                             sendUserImage.Send();
                             break;
                         case 9:         //消息刷新申请[未测试]

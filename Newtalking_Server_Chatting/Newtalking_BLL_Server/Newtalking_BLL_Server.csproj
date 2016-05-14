@@ -78,12 +78,13 @@
     <Compile Include="Account\SearchAccount.cs" />
     <Compile Include="Data_BLL.cs" />
     <Compile Include="File\ReceiveFile.cs" />
-    <Compile Include="File\SelUserImage.cs" />
-    <Compile Include="File\SendUserImage.cs" />
+    <Compile Include="Account\UploadUserImage.cs" />
+    <Compile Include="Account\SelUserImage.cs" />
     <Compile Include="Following\AddFollowing.cs" />
     <Compile Include="Following\RemoveFollowing.cs" />
+    <Compile Include="ImageMessage\ReceiveImage.cs" />
+    <Compile Include="ImageMessage\SendImage.cs" />
     <Compile Include="Message\MessageFresh.cs" />
-    <Compile Include="Message\MessageImage.cs" />
     <Compile Include="UserInfo\EditAccountInfo.cs" />
     <Compile Include="Message\Message.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

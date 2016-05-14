@@ -437,6 +437,64 @@ namespace Newtalking_DAL_Server
             }
         }
 
+        public bool UpLoadFile(int user_id, string strFileName, string strFileKey)
+        {
+            try
+            {
+                con.Open();
+
+                sql = "SELECT * FROM files WHERE file_name=" + strFileName + " AND user_id=" + user_id;
+                MySQLCommand com = new MySQLCommand(sql, con);
+
+                DbDataReader reader = com.ExecuteReader();
+                if (reader.Read())
+                    return true;
+                else
+                {
+                    sql = "INSERT INTO files(user_id, file_name, file_key) VALUES(" + user_id + ", " + strFileName + ", " + strFileKey + ")";
+                    com = new MySQLCommand(sql, con);
+                    com.ExecuteNonQuery();
+                }
+                
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public bool CheckFileKey(int user_id,string strFileName,string strFileKey)
+        {
+            try
+            {
+                con.Open();
+
+                sql = "SELECT * FROM files WHERE file_name=" + strFileName + " AND user_id=" + user_id;
+                MySQLCommand com = new MySQLCommand(sql, con);
+
+                DbDataReader reader = com.ExecuteReader();
+                if (reader.Read())
+                    if (reader["file_key"].ToString() == strFileKey)
+                        return true;
+                    else
+                        return false;
+                else
+                    return false;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
         //public bool DelOverMessages(int bool)
 
 //         --插入用户

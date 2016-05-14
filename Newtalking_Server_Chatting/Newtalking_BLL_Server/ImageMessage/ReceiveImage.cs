@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Newtalking_BLL_Server.File
+namespace Newtalking_BLL_Server.ImageMessage
 {
-    internal class SelUserImage
+    class ReceiveImage
     {
-
     }
 }

@@ -9,7 +9,8 @@ namespace Model
     {
         private int uid;
         private int user_id;
-        private string fileName = "";
+        private string fileName;
+        private string fileKey;
 
         public int Uid
         {
@@ -47,6 +48,19 @@ namespace Model
             set
             {
                 user_id = value;
+            }
+        }
+
+        public string FileKey
+        {
+            get
+            {
+                return fileKey;
+            }
+
+            set
+            {
+                fileKey = value;
             }
         }
     }
