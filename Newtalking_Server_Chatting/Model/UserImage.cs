@@ -5,12 +5,11 @@ using System.Text;
 
 namespace Model
 {
-    public class FileRequest
+    public class UserImage
     {
         private int uid;
         private int user_id;
-        private string fileName = "";
-        private string fileKey = "";
+        private string file_name = "";
 
         public int Uid
         {
@@ -24,17 +23,17 @@ namespace Model
                 uid = value;
             }
         }
-        
-        public string FileName
+
+        public string File_name
         {
             get
             {
-                return fileName;
+                return file_name;
             }
 
             set
             {
-                fileName = value;
+                file_name = value;
             }
         }
 
@@ -48,19 +47,6 @@ namespace Model
             set
             {
                 user_id = value;
-            }
-        }
-
-        public string FileKey
-        {
-            get
-            {
-                return fileKey;
-            }
-
-            set
-            {
-                fileKey = value;
             }
         }
     }

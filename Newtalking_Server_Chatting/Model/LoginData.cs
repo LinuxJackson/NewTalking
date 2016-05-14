@@ -9,7 +9,7 @@ namespace Model
     {
         private int user_id;
 
-        private string user_password;
+        private string user_password = "";
 
         private int uid;
 

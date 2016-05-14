@@ -52,7 +52,7 @@ namespace Newtalking_BLL_Server
                             Newtalking_BLL_Server.File.ReceiveFile receFile = new File.ReceiveFile(data);
                             receFile.Receive();
                             break;
-                        case 8:         //用户头像申请[未测试]
+                        case 8:         //用户头像查看申请[未测试]
                             SelUserImage sendUserImage = new SelUserImage(data);
                             sendUserImage.Send();
                             break;
@@ -69,13 +69,17 @@ namespace Newtalking_BLL_Server
                             addFollowing.Response();
                             break;
                         case 12:        //撤销关注
-
+                            RemoveFollowing removeFollowing = new RemoveFollowing(data);
+                            removeFollowing.Response();
                             break;
                         case 13:        //屏蔽
                             break;
                         case 14:        //图片消息[待定]
                             break;
                         case 15:        //获取关注列表
+                            break;
+                        case 16:        //上传头像
+
                             break;
                     }
                 }
@@ -96,6 +100,26 @@ namespace Newtalking_BLL_Server
                         case 3:         //账号申请[未测试]
                             AccountRequest accountRequest = new AccountRequest(data);
                             accountRequest.Response();
+                            break;
+                        case 6:        //请求文件[未测试]
+                            SendFile sendFile = new SendFile(data);
+                            sendFile.Send();
+                            break;
+                        case 7:        //接收文件[未测试]
+                                       //开辟新线程[待修改]
+                            Newtalking_BLL_Server.File.ReceiveFile receFile = new File.ReceiveFile(data);
+                            receFile.Receive();
+                            break;
+                        case 8:         //用户头像查看申请[未测试]
+                            SelUserImage sendUserImage = new SelUserImage(data);
+                            sendUserImage.Send();
+                            break;
+                        case 10:        //搜索用户
+                            SearchAccount searchAccount = new SearchAccount(data);
+                            searchAccount.Response();
+                            break;
+                        case 16:        //上传头像
+
                             break;
                     }
                 }

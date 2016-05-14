@@ -8,7 +8,7 @@ namespace Model
     public class SelectAccount
     {
         private int uid;
-        private string sel_info;
+        private string sel_info = "";
 
         public int Uid
         {

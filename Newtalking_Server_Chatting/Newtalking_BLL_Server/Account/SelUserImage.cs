@@ -21,15 +21,11 @@ namespace Newtalking_BLL_Server.Account
         internal SelUserImage(DataPackage dataPackTemp)
         {
             //修改为数据库查询后传入
-            dataPack = dataPackTemp;
-            Buffer.BlockCopy(dataPackTemp.Data, 2, bPackBegin, 0, 4);
 
-            FileCheck fileCheck = new FileCheck();
-            FileRequest fr = FileRequestConvert.ConvertToClass_Send(dataPackTemp.Data);
-
+            UserImage userImage = UserImageConvert.ConvertToClass(dataPackTemp.Data);
             SQLService sql = new SQLService();
-            string strFileName = sql.SelUserImageName(fr.User_id);
-            path = fileCheck.SelUserImage(fr.User_id, strFileName);
+            string strFileName = sql.SelUserImageName(userImage.User_id);
+            path = FileCheck.SelUserImage(userImage.User_id, strFileName);
         }
 
         internal bool Send()

@@ -23,10 +23,9 @@ namespace Newtalking_BLL_Server.File
         {
             dataPack = dataPackTemp;
             Buffer.BlockCopy(dataPackTemp.Data, 2, bPackBegin, 0, 4);
-
-            FileCheck fileCheck = new FileCheck();
+            
             FileRequest fr = FileRequestConvert.ConvertToClass_Send(dataPackTemp.Data);
-            path = fileCheck.SelUserFileDir(fr.User_id, fr.FileName);
+            path = FileCheck.SelUserFileDir(fr.User_id, fr.FileName);
 
             SQLService sql = new SQLService();
             if (sql.CheckFileKey(fr.User_id, fr.FileName, fr.FileKey))

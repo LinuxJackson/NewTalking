@@ -23,9 +23,8 @@ namespace Newtalking_BLL_Server.File
         internal bool Receive()
         {
             Newtalking_DAL_Server.ReceiveFile rece = new Newtalking_DAL_Server.ReceiveFile(remoteClient);
-            FileCheck fileCheck = new FileCheck();
-            string[] strs = fileCheck.CheckCreateUserDir(rfr.User_id);
-            WriteFile writer = new WriteFile(strs[0]);
+            string[] strs = FileCheck.CheckCreateUserDir(rfr.User_id);
+            WriteFile writer = new WriteFile(strs[0] + rfr.File_name);
             try {
                 byte[] data;
                 do

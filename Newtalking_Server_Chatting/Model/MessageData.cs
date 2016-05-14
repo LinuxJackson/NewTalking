@@ -13,7 +13,7 @@ namespace Model
 
         private DateTime time;
 
-        private string message;
+        private string message = "";
 
         public int User_id
         {

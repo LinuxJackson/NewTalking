@@ -10,13 +10,11 @@ namespace File_DAL
     public class WriteFile
     {
         public FileStream fileStream;
-        bool initFlag = false;
         string filePath;
 
         public WriteFile(string path)
         {
             filePath = path;
-            initFlag = File.Exists(path);
             fileStream = new FileStream(path, FileMode.Create,FileAccess.Write);
         }
 

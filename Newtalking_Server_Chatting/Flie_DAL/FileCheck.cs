@@ -7,10 +7,10 @@ using Flags;
 
 namespace File_DAL
 {
-    public class FileCheck
+    public static class FileCheck
     {
-        private string dir = AppDomain.CurrentDomain.BaseDirectory;
-        public FileCheck()
+        private static string dir = AppDomain.CurrentDomain.BaseDirectory;
+        static FileCheck()
         {
             try {
                 if (!Directory.Exists(dir + @"Data\"))
@@ -27,7 +27,8 @@ namespace File_DAL
                 return;
             }
         }
-        public string[] CheckCreateUserDir(int user_id)
+
+        static public string[] CheckCreateUserDir(int user_id)
         {
             try
             {
@@ -52,7 +53,7 @@ namespace File_DAL
         }
 
 
-        public string SelUserFileDir(int user_id, string file_name)
+        static public string SelUserFileDir(int user_id, string file_name)
         {
             try
             {
@@ -68,7 +69,7 @@ namespace File_DAL
             }
         }
 
-        public string SelUserImage(int user_id, string strFileName)
+        static public string SelUserImage(int user_id, string strFileName)
         {
             try
             {

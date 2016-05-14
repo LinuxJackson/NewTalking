@@ -23,8 +23,7 @@ namespace Newtalking_BLL_Server.Account
             loginData.User_id = sql.AccountRequest(loginData.User_password);
 
             dataResponse.Data = AccountRequestConvert.ConvertToBytes(loginData);
-            FileCheck fileCheck = new FileCheck();
-            fileCheck.CheckCreateUserDir(loginData.User_id);
+            FileCheck.CheckCreateUserDir(loginData.User_id);
         }
 
         internal void Response()

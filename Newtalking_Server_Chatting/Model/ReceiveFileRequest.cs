@@ -9,7 +9,7 @@ namespace Model
     {
         private int user_id;
         private short file_name_length;
-        private string file_name;
+        private string file_name = "";
 
         public int User_id
         {
