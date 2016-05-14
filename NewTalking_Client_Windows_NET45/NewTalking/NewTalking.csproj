@@ -60,6 +60,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Anim\LoginWindow\LabelOpacity.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -96,10 +97,12 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Anim\" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\DataConverter\DataConverter.csproj">
+      <Project>{dfba6ee3-1b17-43db-b26e-a776194f2c16}</Project>
+      <Name>DataConverter</Name>
+    </ProjectReference>
     <ProjectReference Include="..\libBgbll\libBgbll.csproj">
       <Project>{3b14b733-a0b9-40e1-a334-06d5a0feca07}</Project>
       <Name>libBgbll</Name>

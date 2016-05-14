@@ -40,7 +40,7 @@ namespace Newtalking_BLL_Server.Message
 
             //结束标识
             DataPackage endDpk = new DataPackage();
-            endDpk.Data = BitConverter.GetBytes(0);
+            endDpk.Data = RefreshRequestConvert.ConvertToBytes_End(rr.Uid);
             endDpk.Client = data.Client;
             sender.SendMessage(endDpk);
 

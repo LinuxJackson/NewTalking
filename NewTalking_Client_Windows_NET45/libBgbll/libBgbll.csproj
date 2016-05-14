@@ -46,10 +46,9 @@
     <Compile Include="MainBLL.cs" />
     <Compile Include="Message\ReceiveMessage.cs" />
     <Compile Include="Message\SendMessage.cs" />
-    <Compile Include="ReceiveData.cs" />
+    <Compile Include="Server\ReceiveData.cs" />
     <Compile Include="Server\ConnectServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Server\SockReceiver.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataConverter\DataConverter.csproj">

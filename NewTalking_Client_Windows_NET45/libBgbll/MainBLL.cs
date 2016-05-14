@@ -20,18 +20,19 @@ namespace libBgbll
                     case 1:           //接收到消息
                         //CallBackFuncLib.ReceiveMessage()
                         break;
-                    default:
+                    case 2:         //缺少default判定
                         int uid = BitConverter.ToInt32(data, 2);
+                        FuncReceiveData func = null;
 
                         lock (CallBackFuncLib.ArrUidCallBack)
                         {
                             if (CallBackFuncLib.ArrUidCallBack.ContainsKey(uid))
                             {
-                                FuncReceiveData func = CallBackFuncLib.ArrUidCallBack[uid];
+                                func = CallBackFuncLib.ArrUidCallBack[uid];
                                 CallBackFuncLib.ArrUidCallBack.Remove(uid);
                             }
                         }
-
+                        func(data);
                         break;
                 }
             });

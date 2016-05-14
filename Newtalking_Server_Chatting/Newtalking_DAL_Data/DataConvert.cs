@@ -47,9 +47,10 @@ namespace Newtalking_DAL_Data
     {
         static public byte[] ConvertToBytes(bool boolean, int uid)
         {
-            byte[] bResult = new byte[6];
-            BitConverter.GetBytes(boolean).CopyTo(bResult, 0);
+            byte[] bResult = new byte[8];
+            BitConverter.GetBytes((short)2).CopyTo(bResult, 0);
             BitConverter.GetBytes(uid).CopyTo(bResult, 2);
+            BitConverter.GetBytes(boolean).CopyTo(bResult, 6);
 
             return bResult;
         }
@@ -91,9 +92,8 @@ namespace Newtalking_DAL_Data
         static public byte[] ConvertToBytes(LoginData data)
         {
             byte[] bResult = new byte[26];
-
-            short type = 3;
-            BitConverter.GetBytes(type).CopyTo(bResult, 0);
+            
+            BitConverter.GetBytes((short)2).CopyTo(bResult, 0);
             BitConverter.GetBytes(data.Uid).CopyTo(bResult, 2);
             BitConverter.GetBytes(data.User_id).CopyTo(bResult, 6);
             Encoding.Default.GetBytes(data.User_password).CopyTo(bResult, 10);
@@ -117,9 +117,9 @@ namespace Newtalking_DAL_Data
         static public byte[] ConvertToBytes(AccountInfo data)
         {
             //4+2+4+24
-            byte[] bResult = new byte[46];
+            byte[] bResult = new byte[48];
 
-            BitConverter.GetBytes(data.MessageType).CopyTo(bResult, 0);
+            BitConverter.GetBytes((short)2).CopyTo(bResult, 0);
             BitConverter.GetBytes(data.Uid).CopyTo(bResult, 2);
             BitConverter.GetBytes(data.User_id).CopyTo(bResult, 6);
             BitConverter.GetBytes(data.Sex).CopyTo(bResult, 10);
@@ -146,6 +146,17 @@ namespace Newtalking_DAL_Data
             }
 
             return dataResult;
+        }
+
+        static public byte[] ConvertToBytes_Re(bool boolean, Int32 uid)
+        {
+            byte[] bResult = new byte[8];
+
+            BitConverter.GetBytes((short)2).CopyTo(bResult, 0);
+            BitConverter.GetBytes(uid).CopyTo(bResult, 2);
+            BitConverter.GetBytes(boolean).CopyTo(bResult, 6);
+
+            return bResult;
         }
     }
 
@@ -180,6 +191,17 @@ namespace Newtalking_DAL_Data
             rr.User_id = BitConverter.ToInt32(data, 6);
 
             return rr;
+        }
+
+        static public byte[] ConvertToBytes_End(Int32 uid)
+        {
+            byte[] bResult = new byte[8];
+
+            BitConverter.GetBytes((short)2).CopyTo(bResult, 0);
+            BitConverter.GetBytes(uid).CopyTo(bResult, 2);
+            BitConverter.GetBytes((Int32)0).CopyTo(bResult, 6);
+
+            return bResult;
         }
     }
 

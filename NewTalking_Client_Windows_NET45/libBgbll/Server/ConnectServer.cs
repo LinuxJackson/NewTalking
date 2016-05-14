@@ -9,9 +9,9 @@ namespace libBgbll.Server
 {
     static public class ConnectServer
     {
-        static async public Task<bool> Connect()
+        static async public Task<bool> ConnectAsync()
         {
-            return await Connection.Connect();
+            return await Connection.ConnectAsync();
         }
     }
 }

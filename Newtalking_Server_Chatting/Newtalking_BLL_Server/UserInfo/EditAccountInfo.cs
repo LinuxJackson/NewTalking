@@ -6,6 +6,7 @@ using Model;
 using Newtalking_DAL_Data;
 using Newtalking_DAL_Server;
 using System.Net;
+using Newtalking_DAL_Data;
 
 namespace Newtalking_BLL_Server.UserInfo
 {
@@ -23,8 +24,10 @@ namespace Newtalking_BLL_Server.UserInfo
         internal void Response()
         {
             SQLService sql = new SQLService();
-            byte[] bIsSucceed = BitConverter.GetBytes(sql.AccountInfoEditor(accountInfo));
-            dataSend.Data = bIsSucceed;
+            bool isSucceed = sql.AccountInfoEditor(accountInfo);
+            dataSend.Data = AccountInfoConvet.ConvertToBytes_Re(isSucceed, accountInfo.Uid);
+            Sender sender = new Sender();
+            sender.SendMessage(dataSend);
         }
     }
 }

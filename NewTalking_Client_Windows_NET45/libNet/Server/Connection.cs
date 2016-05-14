@@ -10,7 +10,7 @@ namespace libNet.Server
 {
     public static class Connection
     {
-        static public async Task<bool> Connect()
+        static public async Task<bool> ConnectAsync()
         {
             try
             {

@@ -17,10 +17,9 @@ namespace libBgbll.Login
         {
             Thread td = new Thread(delegate ()
             {
-                NumData.Uid_CallBackIndex++;
                 lock (CallBackFuncLib.ArrUidCallBack)
                 {
-                    CallBackFuncLib.ArrUidCallBack.Add(NumData.Uid_CallBackIndex, func);
+                    CallBackFuncLib.ArrUidCallBack.Add(logData.Uid, func);
                 }
                 Sender.Send(LoginDataConvert.ConvertToBytes(logData));
             });

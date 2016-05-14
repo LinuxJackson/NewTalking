@@ -26,7 +26,8 @@ namespace Newtalking_BLL_Server.Account
         internal bool Login()
         {
             SQLService sql = new SQLService();
-            return sql.Login(loginData);
+            isLogined = sql.Login(loginData);
+            return isLogined;
         }
 
         internal bool Respect()

@@ -40,21 +40,6 @@ namespace Model
             set { phone = value; }
         }
 
-        private short messageType;
-
-        public short MessageType
-        {
-            get
-            {
-                return messageType;
-            }
-
-            set
-            {
-                messageType = value;
-            }
-        }
-
         private int uid;
 
         public int Uid

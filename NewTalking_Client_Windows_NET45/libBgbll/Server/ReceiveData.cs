@@ -7,18 +7,11 @@ using System.Threading.Tasks;
 
 namespace libBgbll.Server
 {
-    public static class SockReceiver
+    public static class ReceiveData
     {
         public static async Task<byte[]> Receive()
         {
-            try
-            {
-                return await Receiver.Receive();
-            }
-            catch(Exception ex)
-            {
-                throw ex;
-            }
+            return await Receiver.Receive();
         }
     }
 }
