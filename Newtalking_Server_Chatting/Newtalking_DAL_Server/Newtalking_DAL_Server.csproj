@@ -72,6 +72,10 @@
     <Compile Include="SQL\SQLService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Flags\Flags.csproj">
+      <Project>{3f69638a-ad84-411d-9807-ac4f979f84f6}</Project>
+      <Name>Flags</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{e68dca14-25e4-4240-9540-c7f9466cb1eb}</Project>
       <Name>Model</Name>

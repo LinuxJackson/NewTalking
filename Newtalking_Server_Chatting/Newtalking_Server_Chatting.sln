@@ -1,6 +1,5 @@
-
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Newtalking_DAL_Data", "Newtalking_DAL_Data\Newtalking_DAL_Data.csproj", "{0B3C6361-56F6-441C-B44B-CAD5C3227294}"
@@ -30,6 +29,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewTalking_INI", "NewTalking_INI", "{353A2FD7-8B6A-471F-8B4E-C6E9918C5A46}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "INI", "INI\INI.csproj", "{B6559163-47C7-4600-85F4-78A81EB2A72F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flags", "Flags\Flags.csproj", "{3F69638A-AD84-411D-9807-AC4F979F84F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -119,6 +120,14 @@ Global
 		{B6559163-47C7-4600-85F4-78A81EB2A72F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B6559163-47C7-4600-85F4-78A81EB2A72F}.Release|x86.ActiveCfg = Release|Any CPU
 		{B6559163-47C7-4600-85F4-78A81EB2A72F}.Release|x86.Build.0 = Release|Any CPU
+		{3F69638A-AD84-411D-9807-AC4F979F84F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F69638A-AD84-411D-9807-AC4F979F84F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F69638A-AD84-411D-9807-AC4F979F84F6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3F69638A-AD84-411D-9807-AC4F979F84F6}.Debug|x86.Build.0 = Debug|Any CPU
+		{3F69638A-AD84-411D-9807-AC4F979F84F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F69638A-AD84-411D-9807-AC4F979F84F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F69638A-AD84-411D-9807-AC4F979F84F6}.Release|x86.ActiveCfg = Release|Any CPU
+		{3F69638A-AD84-411D-9807-AC4F979F84F6}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

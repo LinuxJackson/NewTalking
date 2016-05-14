@@ -10,8 +10,9 @@ CREATE TABLE over_messages(sender_id INTEGER, receiver_id INTEGER, time DATETIME
 
 CREATE TABLE following_list(user_id INTEGER, follow_id INTEGER);
 CREATE TABLE black_list(user_id INTEGER, black_id INTEGER);
+CREATE TABLE user_images(user_id INTEGER, file_name VARCHAR(255))
 
-
+;
 --INSERT INTO users(user_name, user_password) VALUES ('大明', 123456);
 
 --INSERT INTO users(user_name, user_password) VALUES ('小明', 123456);

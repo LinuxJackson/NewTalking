@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
+using Flags;
 
 namespace File_DAL
 {
@@ -57,32 +58,34 @@ namespace File_DAL
             {
                 CheckCreateUserDir(user_id);
                 if (!File.Exists(dir + "Files\\" + user_id + "\\" + file_name))
-                    return "failed";
+                    return FileFlags.FileExistsFailedFlag;
                 else
                     return dir + "Files\\" + user_id + "\\" + file_name;
             }
             catch
             {
-                return "failed";
+                return FileFlags.FileExistsFailedFlag;
             }
         }
 
-        public string SelUserImage(int user_id)
+        public string SelUserImage(int user_id, string strFileName)
         {
             try
             {
                 CheckCreateUserDir(user_id);
-                if (!File.Exists(dir + user_id + "\\Information\\UserImage.txt"))
-                    return "failed";
+                if (!Directory.Exists(dir + user_id + "\\Information\\UserImage\\"))
+                    Directory.CreateDirectory(dir + user_id + "\\Information\\UserImage\\");
+                if (!File.Exists(dir + user_id + "\\Information\\UserImage\\" + strFileName))
+                    return FileFlags.FileExistsFailedFlag;
                 else
                 {
-                    StreamReader sr = new StreamReader(dir + user_id + "\\Information\\UserImage.txt");
+                    StreamReader sr = new StreamReader(dir + user_id + "\\Information\\" + strFileName);
                     return sr.ReadLine();
                 }
             }
             catch
             {
-                return "failed";
+                return FileFlags.FileExistsFailedFlag;
             }
         }
 

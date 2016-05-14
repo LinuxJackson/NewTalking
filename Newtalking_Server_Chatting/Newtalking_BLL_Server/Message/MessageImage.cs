@@ -5,7 +5,8 @@ using System.Text;
 
 namespace Newtalking_BLL_Server.Message
 {
-    class MessageImage
+    public class MessageImage
     {
+
     }
 }

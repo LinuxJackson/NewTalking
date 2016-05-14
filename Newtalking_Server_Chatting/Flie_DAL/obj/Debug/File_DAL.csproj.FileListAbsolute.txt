@@ -12,3 +12,5 @@ E:\LinuxJackson\Newtalking_Server_Chatting\Flie_DAL\bin\Debug\Model.pdb
 E:\LinuxJackson\Newtalking_Server_Chatting\Flie_DAL\obj\Debug\ResolveAssemblyReference.cache
 E:\LinuxJackson\Newtalking_Server_Chatting\Flie_DAL\obj\Debug\Flie_DAL.dll
 E:\LinuxJackson\Newtalking_Server_Chatting\Flie_DAL\obj\Debug\Flie_DAL.pdb
+C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Flie_DAL\bin\Debug\Flags.dll
+C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Flie_DAL\bin\Debug\Flags.pdb

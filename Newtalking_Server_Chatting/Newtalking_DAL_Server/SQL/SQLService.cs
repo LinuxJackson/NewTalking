@@ -7,6 +7,7 @@ using MySQLDriverCS;
 using System.Data.Common;
 using System.Data;
 using System.Collections;
+using Flags;
 
 namespace Newtalking_DAL_Server
 {
@@ -351,6 +352,80 @@ namespace Newtalking_DAL_Server
                     return true;
                 }
                 return false;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public string SelUserImageName(int user_id)
+        {
+            try
+            {
+                con.Open();
+                sql = "SELECT * FROM user_images WHERE user_id=" + user_id;
+                MySQLCommand com = new MySQLCommand(sql, con);
+                DbDataReader reader = com.ExecuteReader();
+                if (reader.Read())
+                    return reader["file_name"].ToString();
+                else
+                    return FileFlags.FileExistsFailedFlag;
+            }
+            catch
+            {
+                return FileFlags.FileExistsFailedFlag;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public bool InsertUserImage(int user_id,string strFileName)
+        {
+            try
+            {
+                con.Open();
+                sql = "INSERT INTO user_images(user_id, file_name) VALUES(" + user_id + ", " + strFileName + ")";
+                MySQLCommand com = new MySQLCommand(sql, con);
+                com.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public bool ChangeUser_Image(int user_id, string strFileName)
+        {
+            try
+            {
+                con.Open();
+
+                sql = "SELECT * FROM user_images WHERE user_id=" + user_id;
+                MySQLCommand com = new MySQLCommand(sql, con);
+                DbDataReader reader = com.ExecuteReader();
+                if (reader.Read())
+                {
+                    sql = "DELETE FROM uesr_images WHERE file_name=" + strFileName;
+                    com = new MySQLCommand(sql, con);
+                    com.ExecuteNonQuery();
+                }
+
+                sql = "INSERT INTO user_images(user_id, file_name) VALUES(" + user_id + ", " + strFileName + ")";
+                com = new MySQLCommand(sql, con);
+                com.ExecuteNonQuery();
+                return true;
             }
             catch
             {

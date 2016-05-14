@@ -7,6 +7,7 @@ using Newtalking_DAL_Server;
 using System.IO;
 using File_DAL;
 using Newtalking_DAL_Data;
+using Flags;
 
 namespace Newtalking_BLL_Server.File
 {
@@ -19,17 +20,21 @@ namespace Newtalking_BLL_Server.File
 
         internal SendUserImage(DataPackage dataPackTemp)
         {
+            //修改为数据库查询后传入
             dataPack = dataPackTemp;
             Buffer.BlockCopy(dataPackTemp.Data, 2, bPackBegin, 0, 4);
 
             FileCheck fileCheck = new FileCheck();
             FileRequest fr = FileRequestConvert.ConvertToClass_Send(dataPackTemp.Data);
-            path = fileCheck.SelUserImage(fr.User_id);
+
+            SQLService sql = new SQLService();
+            string strFileName = sql.SelUserImageName(fr.User_id);
+            path = fileCheck.SelUserImage(fr.User_id, strFileName);
         }
 
         internal bool Send()
         {
-            if (path == "failed")
+            if (path == FileFlags.FileExistsFailedFlag)
                 return false;
             else
                 fsSend = new FileStream(path, FileMode.Open, FileAccess.Read);

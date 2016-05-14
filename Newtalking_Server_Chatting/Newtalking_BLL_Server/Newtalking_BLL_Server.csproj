@@ -95,6 +95,10 @@
       <Project>{4595DA78-C72B-484B-9C40-388719479F7E}</Project>
       <Name>Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Flags\Flags.csproj">
+      <Project>{3f69638a-ad84-411d-9807-ac4f979f84f6}</Project>
+      <Name>Flags</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Flie_DAL\File_DAL.csproj">
       <Project>{a2b5d4f6-83bd-4bdc-aa69-bee5384b07ff}</Project>
       <Name>File_DAL</Name>
