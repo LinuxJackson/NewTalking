@@ -10,10 +10,10 @@
         <Label x:Name="lblBtnLogin" MouseEnter="lblBtn_MouseEnter" MouseLeave="lblBtn_MouseLeave"  FontWeight="Bold" Foreground="Gray" Content="Login" HorizontalAlignment="Center" Margin="226,174,103.333,0" VerticalAlignment="Top" MouseDown="lblBtnLogin_MouseDown"/>
         <TextBox x:Name="txtUser_id" KeyDown="txtUserKeyDown" HorizontalAlignment="Center" Height="23" Margin="104,95,104.333,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="165" TextChanged="txtUser_id_TextChanged"/>
         <TextBox x:Name="txtUser_pwd" KeyDown="txtUserKeyDown" HorizontalAlignment="Center" Height="23" Margin="104,138,104.333,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="165" TextChanged="txtUser_pwd_TextChanged"/>
-         <Label x:Name="lblNewTalking" Content="NewTalking, Welcone!" FontWeight="Bold" FontSize="20" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblState" Content="And this is the Login Window" Foreground="Gray" HorizontalAlignment="Left" Margin="10,228,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblFillUser_id" MouseDown="lblFillUser_id_MouseDown"  Content="Your ID" Foreground="Gray" HorizontalAlignment="Left" Margin="116,93,0,0" VerticalAlignment="Top" FontStyle="Italic"/>
-        <Label x:Name="lblFillUser_pwd" MouseDown="lblFillUser_pwd_MouseDown"  Content="Your Password" Foreground="Gray" HorizontalAlignment="Left" Margin="116,138,0,0" VerticalAlignment="Top" FontStyle="Italic"/>
+        <Label x:Name="lblNewTalking" Content="NewTalking, Welcone!" FontWeight="Bold" FontSize="20" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblState" Content="And this is the Login Window" Foreground="Black" HorizontalAlignment="Left" Margin="10,228,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblFillUser_id" MouseDown="lblFillUser_id_MouseDown"  Content="Your ID" Foreground="Gray" HorizontalAlignment="Center" Margin="116,93,217.667,0" VerticalAlignment="Top" FontStyle="Italic" Width="63"/>
+        <Label x:Name="lblFillUser_pwd" MouseDown="lblFillUser_pwd_MouseDown"  Content="Your Password" Foreground="Gray" HorizontalAlignment="Center" Margin="116,136,172.667,0" VerticalAlignment="Top" FontStyle="Italic" Width="108"/>
 
     </Grid>
 </Window>

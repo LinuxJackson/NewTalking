@@ -49,9 +49,9 @@ namespace NewTalking.Anim.LoginWindow
         {
             DoubleAnimation da = new DoubleAnimation();
             da.From = lbl.Opacity;
-            da.To = 1;
+            da.To = 0.6;
             da.Duration = TimeSpan.FromSeconds(1);
-            da.BeginAnimation(Label.OpacityProperty, da);
+            lbl.BeginAnimation(Label.OpacityProperty, da);
         }
     }
 }

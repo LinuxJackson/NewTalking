@@ -62,6 +62,7 @@ namespace NewTalking
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            StartingAnim.Show(lblNewTalking, lblBtnLogin, txtUser_id, txtUser_pwd, lblFillUser_id, lblFillUser_pwd);
             txtUser_id.Focus();
             Connect();
         }
@@ -80,6 +81,7 @@ namespace NewTalking
 
         private void Login_Form()
         {
+            LabelOpacity.AutoTimesShow(this.lblState, 3, 0.7, true, "Logining...");
             if (CheckBlanks())
             {
                 lblBtnLogin.IsEnabled = false;
@@ -144,7 +146,7 @@ namespace NewTalking
 
         private void txtUser_pwd_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (txtUser_id.Text != "")
+            if (txtUser_pwd.Text != "")
                 lblFillUser_pwd.Visibility = Visibility.Hidden;
             else
                 lblFillUser_pwd.Visibility = Visibility.Visible;
@@ -164,11 +166,15 @@ namespace NewTalking
             int a;
             if (!Int32.TryParse(txtUser_id.Text, out a))
             {
+                txtUser_id.Focus();
+                txtUser_id.SelectAll();
                 LabelOpacity.AutoTimesShow(lblState, 2, 0.5, false, "User id is not correct!");
                 return false;
             }
             if (txtUser_pwd.Text == "" || txtUser_pwd.Text.Length > 16)
             {
+                txtUser_pwd.Focus();
+                txtUser_pwd.SelectAll();
                 LabelOpacity.AutoTimesShow(lblState, 2, 0.5, false, "User password is not correct!");
                 return false;
             }
