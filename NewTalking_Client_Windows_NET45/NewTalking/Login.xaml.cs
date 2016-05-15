@@ -20,6 +20,7 @@ using libBgbll.Login;
 using libData;
 using DataConverter;
 using NewTalking.Anim.LoginWindow;
+using System.Windows.Threading;
 
 namespace NewTalking
 {
@@ -35,8 +36,12 @@ namespace NewTalking
             InitializeComponent();
         }
 
+        DispatcherTimer tmrReconnect = new DispatcherTimer();
         private async void Connect()
         {
+            lblState.MouseDown -= reconnect_MouseDown;
+            tmrReconnect.IsEnabled = false;
+            reconnectTime = 20;
             try
             {
                 LabelOpacity.AutoTimesShow(this.lblState, 1000, 1.5, true, "Connecting...");
@@ -52,18 +57,42 @@ namespace NewTalking
                     }
                 }
                 else
+                {
+                    lblState.MouseDown += reconnect_MouseDown;
+                    tmrReconnect.IsEnabled = true;
                     LabelOpacity.AutoTimesShow(this.lblState, 3, 0.7, true, "Connection Failed");
+                }
             }
             catch
             {
+                lblState.MouseDown += reconnect_MouseDown;
+                tmrReconnect.IsEnabled = true;
                 LabelOpacity.AutoTimesShow(this.lblState, 3, 0.7, true, "Connection Failed");
             }
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            tmrReconnect.Tick += TmrReconnect_Tick;
+            tmrReconnect.Interval = TimeSpan.FromSeconds(1);
+
             StartingAnim.Show(lblNewTalking, lblBtnLogin, txtUser_id, txtUser_pwd, lblFillUser_id, lblFillUser_pwd);
             txtUser_id.Focus();
+            Connect();
+        }
+
+        int reconnectTime = 0;
+        private void TmrReconnect_Tick(object sender, EventArgs e)
+        {
+            reconnectTime--;
+            if (reconnectTime < 15)
+                lblState.Content = reconnectTime + " seconds or [Click Here] to reconnect";
+            if (reconnectTime == 0)
+                Connect();
+        }
+
+        private void reconnect_MouseDown(object sender,MouseButtonEventArgs e)
+        {
             Connect();
         }
 
