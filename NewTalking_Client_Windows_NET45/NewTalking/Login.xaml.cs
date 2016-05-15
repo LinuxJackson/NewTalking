@@ -41,6 +41,7 @@ namespace NewTalking
         DispatcherTimer tmrReconnect = new DispatcherTimer();
         private async void Connect()
         {
+            reconnectShowEnabledFlag = true;
             lblState.MouseDown -= reconnect_MouseDown;
             tmrReconnect.IsEnabled = false;
             reconnectTime = 20;
@@ -64,14 +65,14 @@ namespace NewTalking
                     lblState.MouseDown += reconnect_MouseDown;
                     tmrReconnect.IsEnabled = true;
                     IsConnected_flag = false;
-                    LabelOpacity.AutoTimesShow(this.lblState, 3, 0.7, true, "Connection Failed");
+                    LabelOpacity.AutoTimesShow(this.lblState, 2, 0.7, true, "Connection Failed");
                 }
             }
             catch
             {
                 lblState.MouseDown += reconnect_MouseDown;
                 tmrReconnect.IsEnabled = true;
-                LabelOpacity.AutoTimesShow(this.lblState, 3, 0.7, true, "Connection Failed");
+                LabelOpacity.AutoTimesShow(this.lblState, 2, 0.7, true, "Connection Failed");
                 IsConnected_flag = false;
             }
         }
@@ -86,12 +87,14 @@ namespace NewTalking
             Connect();
         }
 
+        bool reconnectShowEnabledFlag = true;
         int reconnectTime = 0;
         private void TmrReconnect_Tick(object sender, EventArgs e)
         {
             reconnectTime--;
             if (reconnectTime < 15)
-                lblState.Content = reconnectTime + " seconds or [Click Here] to reconnect";
+                if (reconnectShowEnabledFlag)
+                    lblState.Content = reconnectTime + " seconds or [Click Here] to reconnect";
             if (reconnectTime == 0)
                 Connect();
         }
@@ -115,6 +118,7 @@ namespace NewTalking
 
         private void Login_Form()
         {
+            reconnectShowEnabledFlag = false;
             LabelOpacity.AutoTimesShow(this.lblState, 3, 0.7, true, "Logining...");
             if (CheckBlanks())
             {
@@ -149,7 +153,7 @@ namespace NewTalking
                 }
                 else
                 {
-                    LabelOpacity.AutoTimesShow(lblState, 3, 0.5, false, "Connection Failed");
+                    LabelOpacity.AutoTimesShow(lblState, 2, 0.5, false, "Connection Failed");
                 }
             }
         }
@@ -202,8 +206,7 @@ namespace NewTalking
         {
             if (e.Key == Key.Enter)
             {
-                if (CheckBlanks())
-                    Login_Form();
+                Login_Form();
             }
         }
 
