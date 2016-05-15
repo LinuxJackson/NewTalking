@@ -79,7 +79,8 @@ namespace Newtalking_BLL_Server
                         case 15:        //获取关注列表
                             break;
                         case 16:        //上传头像
-
+                            UploadUserImage uploadUserImage = new UploadUserImage(data);
+                            uploadUserImage.Receive();
                             break;
                     }
                 }
@@ -117,9 +118,6 @@ namespace Newtalking_BLL_Server
                         case 10:        //搜索用户
                             SearchAccount searchAccount = new SearchAccount(data);
                             searchAccount.Response();
-                            break;
-                        case 16:        //上传头像
-
                             break;
                     }
                 }

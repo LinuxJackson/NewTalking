@@ -13,17 +13,20 @@ namespace NewTalking.Anim.LoginWindow
         static Label lblFillUser_id;
         static Label lblFillUser_pwd;
         static Label btnLogin;
+        static Label lblVersion;
 
         internal static void Show(Label lblWelcome, Label btnLogin, TextBox txtUser_id,
-            TextBox txtUser_pwd, Label lblFillUser_id, Label lblFillUser_pwd)
+            TextBox txtUser_pwd, Label lblFillUser_id, Label lblFillUser_pwd, Label lblVersion)
         {
             lblFillUser_id.Opacity = 0;
             lblFillUser_pwd.Opacity = 0;
             btnLogin.Opacity = 0;
+            lblVersion.Opacity = 0;
 
             StartingAnim.btnLogin = btnLogin;
             StartingAnim.lblFillUser_id = lblFillUser_id;
             StartingAnim.lblFillUser_pwd = lblFillUser_pwd;
+            StartingAnim.lblVersion = lblVersion;
 
             ThicknessAnimation tka = new ThicknessAnimation();
             tka.AccelerationRatio = 0.2;
@@ -104,6 +107,7 @@ namespace NewTalking.Anim.LoginWindow
             lblFillUser_id.BeginAnimation(Label.OpacityProperty, da);
             lblFillUser_pwd.BeginAnimation(Label.OpacityProperty, da);
             btnLogin.BeginAnimation(Label.OpacityProperty, da);
+            lblVersion.BeginAnimation(Label.OpacityProperty, da);
         }
     }
 }
