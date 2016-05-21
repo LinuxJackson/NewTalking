@@ -3,3 +3,8 @@ C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libFlags\bin\Deb
 C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libFlags\obj\Debug\libFlags.csprojResolveAssemblyReference.cache
 C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libFlags\obj\Debug\libFlags.dll
 C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libFlags\obj\Debug\libFlags.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libFlags\bin\Debug\libFlags.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libFlags\bin\Debug\libFlags.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libFlags\obj\Debug\libFlags.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libFlags\obj\Debug\libFlags.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libFlags\obj\Debug\libFlags.pdb

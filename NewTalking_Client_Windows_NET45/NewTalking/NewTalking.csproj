@@ -36,6 +36,9 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>U%40[A%28UJCLE08%24~N82{287%25L.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -61,6 +64,7 @@
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="Anim\LoginWindow\LabelOpacity.cs" />
+    <Compile Include="Anim\LoginWindow\SignupAnim.cs" />
     <Compile Include="Anim\LoginWindow\StartingAnim.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -98,7 +102,9 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Images\U%40[A%28UJCLE08%24~N82{287%25L.png" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataConverter\DataConverter.csproj">
       <Project>{dfba6ee3-1b17-43db-b26e-a776194f2c16}</Project>
@@ -120,6 +126,9 @@
       <Project>{03b31bf2-7c32-435f-8447-d3b4c3e57a67}</Project>
       <Name>Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="U%40[A%28UJCLE08%24~N82{287%25L.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

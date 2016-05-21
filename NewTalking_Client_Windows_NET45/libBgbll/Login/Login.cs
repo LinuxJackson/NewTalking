@@ -21,7 +21,7 @@ namespace libBgbll.Login
                 {
                     CallBackFuncLib.ArrUidCallBack.Add(logData.Uid, func);
                 }
-                Sender.Send(LoginDataConvert.ConvertToBytes(logData));
+                Sender.Send(LoginDataConverter.ConvertToBytes(logData));
             });
             td.Start();
         }

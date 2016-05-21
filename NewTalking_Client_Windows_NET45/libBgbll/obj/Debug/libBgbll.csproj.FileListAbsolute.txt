@@ -13,3 +13,18 @@ C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libBgbll\bin\Deb
 C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libBgbll\bin\Debug\Model.pdb
 C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libBgbll\obj\Debug\libBgbll.dll
 C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libBgbll\obj\Debug\libBgbll.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libBgbll\bin\Debug\libBgbll.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libBgbll\bin\Debug\libBgbll.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libBgbll\bin\Debug\DataConverter.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libBgbll\bin\Debug\libData.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libBgbll\bin\Debug\libFlags.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libBgbll\bin\Debug\libNet.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libBgbll\bin\Debug\Model.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libBgbll\bin\Debug\DataConverter.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libBgbll\bin\Debug\libData.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libBgbll\bin\Debug\libFlags.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libBgbll\bin\Debug\libNet.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libBgbll\bin\Debug\Model.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libBgbll\obj\Debug\libBgbll.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libBgbll\obj\Debug\libBgbll.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libBgbll\obj\Debug\libBgbll.pdb

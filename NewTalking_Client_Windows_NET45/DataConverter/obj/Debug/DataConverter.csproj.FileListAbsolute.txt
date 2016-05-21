@@ -5,3 +5,10 @@ C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\DataConverter\bi
 C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\DataConverter\obj\Debug\DataConverter.csprojResolveAssemblyReference.cache
 C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\DataConverter\obj\Debug\DataConverter.dll
 C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\DataConverter\obj\Debug\DataConverter.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\DataConverter\bin\Debug\DataConverter.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\DataConverter\bin\Debug\DataConverter.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\DataConverter\bin\Debug\Model.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\DataConverter\bin\Debug\Model.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\DataConverter\obj\Debug\DataConverter.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\DataConverter\obj\Debug\DataConverter.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\DataConverter\obj\Debug\DataConverter.pdb

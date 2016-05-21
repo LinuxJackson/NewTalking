@@ -14,19 +14,25 @@ namespace NewTalking.Anim.LoginWindow
         static Label lblFillUser_pwd;
         static Label btnLogin;
         static Label lblVersion;
+        static Label lblSignup;
+        static Image igIcon;
 
         internal static void Show(Label lblWelcome, Label btnLogin, TextBox txtUser_id,
-            TextBox txtUser_pwd, Label lblFillUser_id, Label lblFillUser_pwd, Label lblVersion)
+            TextBox txtUser_pwd, Label lblFillUser_id, Label lblFillUser_pwd, Label lblVersion, Label lblSignup, Image igIcon)
         {
             lblFillUser_id.Opacity = 0;
             lblFillUser_pwd.Opacity = 0;
             btnLogin.Opacity = 0;
             lblVersion.Opacity = 0;
+            lblSignup.Opacity = 0;
+            igIcon.Opacity = 0;
 
             StartingAnim.btnLogin = btnLogin;
             StartingAnim.lblFillUser_id = lblFillUser_id;
             StartingAnim.lblFillUser_pwd = lblFillUser_pwd;
             StartingAnim.lblVersion = lblVersion;
+            StartingAnim.lblSignup = lblSignup;
+            StartingAnim.igIcon = igIcon;
 
             ThicknessAnimation tka = new ThicknessAnimation();
             tka.AccelerationRatio = 0.2;
@@ -108,6 +114,8 @@ namespace NewTalking.Anim.LoginWindow
             lblFillUser_pwd.BeginAnimation(Label.OpacityProperty, da);
             btnLogin.BeginAnimation(Label.OpacityProperty, da);
             lblVersion.BeginAnimation(Label.OpacityProperty, da);
+            lblSignup.BeginAnimation(Label.OpacityProperty, da);
+            igIcon.BeginAnimation(Label.OpacityProperty, da);
         }
     }
 }

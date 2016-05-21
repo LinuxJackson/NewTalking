@@ -21,6 +21,7 @@ using libData;
 using DataConverter;
 using NewTalking.Anim.LoginWindow;
 using System.Windows.Threading;
+using libBgbll.Account;
 
 namespace NewTalking
 {
@@ -33,7 +34,9 @@ namespace NewTalking
     {
         public MainWindow()
         {
+            //image2.Source = new BitmapImage(new Uri("/images/2.jpg", UriKind.Relative));
             InitializeComponent();
+            igIcon.Source = new BitmapImage(new Uri(@"\Resources\Images\U@[A(UJCLE08$~N82{287%L.png", UriKind.Relative));
         }
         
         private bool IsConnected_flag = false;
@@ -47,12 +50,12 @@ namespace NewTalking
             reconnectTime = 20;
             try
             {
-                LabelOpacity.AutoTimesShow(this.lblState, 1000, 1.5, true, "Connecting...");
+                LabelOpacity.AutoTimesShow(this.lblState, 1000, 1.5, "Connecting...");
                 Task<bool> conn = ConnectServer.ConnectAsync();
                 bool IsConnected = await conn;
                 if (IsConnected)
                 {
-                    LabelOpacity.AutoTimesShow(this.lblState, 3, 0.7, true, "Connected");
+                    LabelOpacity.AutoTimesShow(this.lblState, 3, 0.7, "Connected");
                     IsConnected_flag = true;
                     while (true)
                     {
@@ -65,14 +68,14 @@ namespace NewTalking
                     lblState.MouseDown += reconnect_MouseDown;
                     tmrReconnect.IsEnabled = true;
                     IsConnected_flag = false;
-                    LabelOpacity.AutoTimesShow(this.lblState, 2, 0.7, true, "Connection Failed");
+                    LabelOpacity.AutoTimesShow(this.lblState, 2, 0.7, "Connection Failed");
                 }
             }
             catch
             {
                 lblState.MouseDown += reconnect_MouseDown;
                 tmrReconnect.IsEnabled = true;
-                LabelOpacity.AutoTimesShow(this.lblState, 2, 0.7, true, "Connection Failed");
+                LabelOpacity.AutoTimesShow(this.lblState, 2, 0.7, "Connection Failed");
                 IsConnected_flag = false;
             }
         }
@@ -82,7 +85,7 @@ namespace NewTalking
             tmrReconnect.Tick += TmrReconnect_Tick;
             tmrReconnect.Interval = TimeSpan.FromSeconds(1);
 
-            StartingAnim.Show(lblNewTalking, lblBtnLogin, txtUser_id, txtUser_pwd, lblFillUser_id, lblFillUser_pwd,lblVersion);
+            StartingAnim.Show(lblNewTalking, lblBtnLogin, txtUser_id, txtUser_pwd, lblFillUser_id, lblFillUser_pwd,lblVersion, lblBtnSignup, igIcon);
             txtUser_id.Focus();
             Connect();
         }
@@ -113,13 +116,13 @@ namespace NewTalking
         private delegate void ChangeTextFunc(Label lbl, string text);
         private void ChangeText(Label lbl, string text)
         {
-            LabelOpacity.AutoTimesShow(lbl, 3, 0.5, false, "User password is not correct!");
+            LabelOpacity.AutoTimesShow(lbl, 3, 0.5, text);
         }
 
         private void Login_Form()
         {
             reconnectShowEnabledFlag = false;
-            LabelOpacity.AutoTimesShow(this.lblState, 3, 0.7, true, "Logining...");
+            LabelOpacity.AutoTimesShow(this.lblState, 3, 0.7, "Logining...");
             if (CheckBlanks())
             {
                 if (IsConnected_flag)
@@ -128,16 +131,16 @@ namespace NewTalking
                     txtUser_id.IsEnabled = false;
                     txtUser_pwd.IsEnabled = false;
 
-                    LoginData LoginData = new LoginData();
-                    LoginData.User_id = Int32.Parse(txtUser_id.Text);
-                    LoginData.User_password = txtUser_pwd.Text;
+                    LoginData loginData = new LoginData();
+                    loginData.User_id = Int32.Parse(txtUser_id.Text);
+                    loginData.User_password = txtUser_pwd.Text;
 
-                    LoginData.Uid = CallBackNum.CallBackIndex = CallBackNum.CallBackIndex + 1;
+                    loginData.Uid = CallBackNum.CallBackIndex = CallBackNum.CallBackIndex + 1;
 
                     FuncReceiveData func = delegate (byte[] data)
                      {
-                         LoginData_Re loginData = LoginDataConvert.ConvertToClass(data);
-                         if (loginData.IsLogined)
+                         LoginData_Re loginData_re = LoginDataConverter.ConvertToClass(data);
+                         if (loginData_re.IsLogined)
                          {
                              this.lblState.Dispatcher.BeginInvoke(new ChangeTextFunc(ChangeText), lblState, "User password is not correct!");
                          }
@@ -149,11 +152,11 @@ namespace NewTalking
                              txtUser_pwd.IsEnabled = true;
                          }
                      };
-                    Login.UserLogin(func, LoginData);
+                    Login.UserLogin(func, loginData);
                 }
                 else
                 {
-                    LabelOpacity.AutoTimesShow(lblState, 2, 0.5, false, "Connection Failed");
+                    LabelOpacity.AutoTimesShow(lblState, 2, 0.5, "Connection Failed", isReverse: false);
                 }
             }
         }
@@ -206,7 +209,10 @@ namespace NewTalking
         {
             if (e.Key == Key.Enter)
             {
-                Login_Form();
+                if (isOnSigningUp)
+                    CreateAccount_Form();
+                else
+                    Login_Form();
             }
         }
 
@@ -217,17 +223,95 @@ namespace NewTalking
             {
                 txtUser_id.Focus();
                 txtUser_id.SelectAll();
-                LabelOpacity.AutoTimesShow(lblState, 2, 0.5, false, "User id is not correct!");
+                LabelOpacity.AutoTimesShow(lblState, 2, 0.5, "User id is not correct!", isReverse: false);
                 return false;
             }
             if (txtUser_pwd.Text == "" || txtUser_pwd.Text.Length > 16)
             {
                 txtUser_pwd.Focus();
                 txtUser_pwd.SelectAll();
-                LabelOpacity.AutoTimesShow(lblState, 2, 0.5, false, "User password is not correct!");
+                LabelOpacity.AutoTimesShow(lblState, 2, 0.5, "Password can't be null or more than 16", isReverse: false);
                 return false;
             }
             return true;
+        }
+
+        bool isOnSigningUp = false;
+
+        private void lblBtnSignup_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if(!isOnSigningUp)
+            {
+                SignupAnim.TurnToSignup(lblBtnSignup, lblBtnLogin, txtUser_id, lblReturnToLogin, lblFillUser_pwd);
+                isOnSigningUp = true;
+                txtUser_pwd.Focus();
+            }
+            else
+            {
+                CreateAccount_Form();
+            }
+        }
+
+        private void lblReturnToLogin_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            isOnSigningUp = false;
+            SignupAnim.TurnToLogin(lblBtnSignup, lblBtnLogin, txtUser_id, lblReturnToLogin, lblFillUser_pwd);
+            txtUser_id.Focus();
+        }
+
+        private delegate void TextBoxTextChangeFunc(TextBox txt, string strText);
+        private void TextBoxTextChange(TextBox txt, string strText)
+        {
+            txt.Text = strText;
+        }
+
+        private delegate void TextBoxEnableFunc(TextBox txt);
+
+        private void TextBoxEnabled(TextBox txt)
+        {
+            txt.IsEnabled = true;
+        }
+
+        private async void CreateAccount_Form()
+        {
+            reconnectShowEnabledFlag = false;
+
+            if (txtUser_pwd.Text == "" || txtUser_pwd.Text.Length > 16)
+            {
+                LabelOpacity.AutoTimesShow(lblState, 2, 0.5, "Password can't be null or more than 16", isReverse: false);
+                return;
+            }
+            if (IsConnected_flag)
+            {
+                lblBtnSignup.IsEnabled = false;
+                txtUser_pwd.IsEnabled = false;
+
+                LoginData loginData = new LoginData();
+                LabelOpacity.AutoTimesShow(this.lblState, 3, 0.7, "Signing Up...");
+                loginData.User_password = txtUser_pwd.Text;
+                loginData.Uid = CallBackNum.CallBackIndex = CallBackNum.CallBackIndex + 1;
+
+                FuncReceiveData func = delegate(byte[] data)
+                {
+                    LoginData loginData_re = AccountRequestConverter.ConvertToClass(data);
+                    if (loginData_re.User_id == 0)
+                    {
+                        this.lblState.Dispatcher.BeginInvoke(new ChangeTextFunc(ChangeText), lblState, "Couldn't sign up!");
+                    }
+                    else
+                    {
+                        this.lblState.Dispatcher.BeginInvoke(new ChangeTextFunc(ChangeText), lblState, "Your new account: " + loginData_re.User_id);
+                        txtUser_id.Dispatcher.BeginInvoke(new TextBoxTextChangeFunc(TextBoxTextChange), txtUser_id, loginData_re.User_id.ToString());
+                        txtUser_pwd.Dispatcher.BeginInvoke(new TextBoxEnableFunc(TextBoxEnabled), txtUser_pwd);
+                    }
+                };
+
+                bool isCreated = await CreateAccount.Create(loginData, func);
+            }
+            else
+            {
+                LabelOpacity.AutoTimesShow(lblState, 2, 0.5, "Connection Failed", isReverse: false);
+            }
         }
     }
 }

@@ -53,7 +53,7 @@ namespace Newtalking_DAL_Server
                 sql = "INSERT INTO users(user_password) VALUES(" + pwd + ")";
                 MySQLCommand com = new MySQLCommand(sql, con);
                 com.ExecuteNonQuery();
-                sql = "SELECT LAST_INSERT_ID()";
+                sql = "SELECT * FROM users WHERE user_id = LAST_INSERT_ID()";
                 com = new MySQLCommand(sql, con);
                 DbDataReader reader = com.ExecuteReader();
                 int user_id = 0;

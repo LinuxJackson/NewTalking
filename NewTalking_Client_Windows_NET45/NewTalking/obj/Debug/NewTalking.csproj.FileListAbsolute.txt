@@ -24,3 +24,29 @@ C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\NewTalking\obj\D
 C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\NewTalking\obj\Debug\NewTalking.exe
 C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\NewTalking\obj\Debug\NewTalking.pdb
 C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\NewTalking\bin\Debug\NewTalking.exe.config
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\NewTalking\bin\Debug\NewTalking.exe.config
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\NewTalking\obj\Debug\NewTalking.exe
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\NewTalking\obj\Debug\NewTalking.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\NewTalking\bin\Debug\NewTalking.exe
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\NewTalking\bin\Debug\NewTalking.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\NewTalking\bin\Debug\DataConverter.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\NewTalking\bin\Debug\libBgbll.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\NewTalking\bin\Debug\libData.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\NewTalking\bin\Debug\libFlags.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\NewTalking\bin\Debug\Model.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\NewTalking\bin\Debug\libNet.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\NewTalking\bin\Debug\DataConverter.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\NewTalking\bin\Debug\libBgbll.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\NewTalking\bin\Debug\libData.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\NewTalking\bin\Debug\libFlags.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\NewTalking\bin\Debug\Model.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\NewTalking\bin\Debug\libNet.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\NewTalking\obj\Debug\NewTalking.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\NewTalking\obj\Debug\Login.g.cs
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\NewTalking\obj\Debug\App.g.cs
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\NewTalking\obj\Debug\NewTalking_MarkupCompile.cache
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\NewTalking\obj\Debug\NewTalking_MarkupCompile.lref
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\NewTalking\obj\Debug\Login.baml
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\NewTalking\obj\Debug\NewTalking.g.resources
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\NewTalking\obj\Debug\NewTalking.Properties.Resources.resources
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\NewTalking\obj\Debug\NewTalking.csproj.GenerateResource.Cache

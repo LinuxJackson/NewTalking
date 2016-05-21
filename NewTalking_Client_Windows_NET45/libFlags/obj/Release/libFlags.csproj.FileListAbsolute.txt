@@ -1,0 +1,5 @@
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libFlags\bin\Release\libFlags.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libFlags\bin\Release\libFlags.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libFlags\obj\Release\libFlags.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libFlags\obj\Release\libFlags.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libFlags\obj\Release\libFlags.pdb

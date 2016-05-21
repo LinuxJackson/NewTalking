@@ -1,0 +1,15 @@
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libBgbll\bin\Release\libBgbll.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libBgbll\bin\Release\libBgbll.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libBgbll\bin\Release\DataConverter.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libBgbll\bin\Release\libData.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libBgbll\bin\Release\libFlags.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libBgbll\bin\Release\libNet.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libBgbll\bin\Release\Model.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libBgbll\bin\Release\DataConverter.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libBgbll\bin\Release\libData.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libBgbll\bin\Release\libFlags.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libBgbll\bin\Release\libNet.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libBgbll\bin\Release\Model.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libBgbll\obj\Release\libBgbll.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libBgbll\obj\Release\libBgbll.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libBgbll\obj\Release\libBgbll.pdb

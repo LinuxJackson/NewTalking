@@ -39,7 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LoginDataConvert.cs" />
+    <Compile Include="AccountRequestConverter.cs" />
+    <Compile Include="LoginDataConverter.cs" />
     <Compile Include="MessageDataConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

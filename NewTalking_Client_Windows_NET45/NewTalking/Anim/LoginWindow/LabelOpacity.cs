@@ -16,7 +16,7 @@ namespace NewTalking.Anim.LoginWindow
         static bool isReverse;
         static string strText;
 
-        internal static void AutoTimesShow(Label lbl, int times, double time, bool isReverse, string strText)
+        internal static void AutoTimesShow(Label lbl, int times, double time, string strText, bool isReverse = true)
         {
             LabelOpacity.lbl = lbl;
             LabelOpacity.times = times;

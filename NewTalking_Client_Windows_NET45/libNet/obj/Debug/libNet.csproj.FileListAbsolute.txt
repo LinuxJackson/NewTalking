@@ -5,3 +5,10 @@ C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libNet\bin\Debug
 C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libNet\obj\Debug\libNet.csprojResolveAssemblyReference.cache
 C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libNet\obj\Debug\libNet.dll
 C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libNet\obj\Debug\libNet.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libNet\bin\Debug\libNet.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libNet\bin\Debug\libNet.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libNet\bin\Debug\libFlags.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libNet\bin\Debug\libFlags.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libNet\obj\Debug\libNet.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libNet\obj\Debug\libNet.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libNet\obj\Debug\libNet.pdb

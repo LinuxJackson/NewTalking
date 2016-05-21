@@ -11,3 +11,8 @@ C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Model\bin\Release\Model.dll
 C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Model\bin\Release\Model.pdb
 C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Model\obj\Release\Model.dll
 C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Model\obj\Release\Model.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\Model\bin\Release\Model.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\Model\bin\Release\Model.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\Model\obj\Release\Model.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\Model\obj\Release\Model.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\Model\obj\Release\Model.pdb

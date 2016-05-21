@@ -5,3 +5,10 @@ C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libData\bin\Debu
 C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libData\bin\Debug\Model.pdb
 C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libData\obj\Debug\libData.dll
 C:\Users\Dell-\Documents\Visual Studio 2015\Projects\NewTalking\libData\obj\Debug\libData.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libData\bin\Debug\libData.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libData\bin\Debug\libData.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libData\bin\Debug\Model.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libData\bin\Debug\Model.pdb
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libData\obj\Debug\libData.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libData\obj\Debug\libData.dll
+C:\Users\Administrator\Desktop\NewTalking-master\NewTalking_Client_Windows_NET45\libData\obj\Debug\libData.pdb

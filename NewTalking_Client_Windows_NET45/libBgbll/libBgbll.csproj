@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account\CreateAccount.cs" />
     <Compile Include="Login\Login.cs" />
     <Compile Include="MainBLL.cs" />
     <Compile Include="Message\ReceiveMessage.cs" />
