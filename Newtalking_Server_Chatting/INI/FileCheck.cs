@@ -41,7 +41,7 @@ namespace INI
             {
                 return File.ReadAllText(Property.IniDir + "MySqlPWD.txt");
             }
-            catch(Exception ex)
+            catch
             {
                 return "";
             }

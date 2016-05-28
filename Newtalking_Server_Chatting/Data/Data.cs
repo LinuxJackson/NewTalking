@@ -9,29 +9,6 @@ namespace Data
 {
     public class Data
     {
-        //static private List<OnlineUserProperties> arrOnlineUsers = new List<OnlineUserProperties>();
-
-        //public static List<OnlineUserProperties> ArrOnlineUsers
-        //{
-        //    get
-        //    {
-        //        return arrOnlineUsers;
-        //    }
-
-        //    set
-        //    {
-        //        arrOnlineUsers = value;
-        //    }
-        //}
-
-        //static private ArrayList arrSendingMessages = new ArrayList();
-
-        //static public ArrayList ArrSendingMessages
-        //{
-        //    get { return arrSendingMessages; }
-        //    set { arrSendingMessages = value; }
-        //}
-
         static private Dictionary<int, OnlineUserProperties> arrOnlineUsers = new Dictionary<int, OnlineUserProperties>();
 
         public static Dictionary<int, OnlineUserProperties> ArrOnlineUsers

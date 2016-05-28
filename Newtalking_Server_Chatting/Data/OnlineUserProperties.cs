@@ -4,25 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Net;
 using System.Net.Sockets;
+using System.Collections;
 
 namespace Data
 {
-    public struct OnlineUserProperties
+    public class OnlineUserProperties
     {
-        private System.Net.Sockets.TcpClient client;
-
+        private List<TcpClient> clients = new List<TcpClient>();
         private int user_id;
 
-        public TcpClient Client
+        public List<TcpClient> Clients
         {
             get
             {
-                return client;
+                return clients;
             }
 
             set
             {
-                client = value;
+                clients = value;
             }
         }
 

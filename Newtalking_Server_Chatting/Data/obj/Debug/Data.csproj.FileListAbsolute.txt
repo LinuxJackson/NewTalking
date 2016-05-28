@@ -24,3 +24,4 @@ E:\LinuxJackson\Newtalking_Server_Chatting\Data\obj\Debug\GenerateResource.read.
 E:\LinuxJackson\Newtalking_Server_Chatting\Data\obj\Debug\GenerateResource.write.1.tlog
 E:\LinuxJackson\Newtalking_Server_Chatting\Data\obj\Debug\Data.dll
 E:\LinuxJackson\Newtalking_Server_Chatting\Data\obj\Debug\Data.pdb
+C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache

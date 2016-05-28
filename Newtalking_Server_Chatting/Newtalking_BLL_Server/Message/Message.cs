@@ -38,11 +38,34 @@ namespace Newtalking_BLL_Server.Message
                 {
                     Data.OnlineUserProperties user = Data.Data.ArrOnlineUsers[msgData.Receiver_id];
 
-                    DataPackage dataPackage = new DataPackage();
-                    dataPackage.Client = user.Client;
-                    dataPackage.Data = bData;
                     Sender sender = new Sender();
-                    if (sender.SendMessage(dataPackage))
+                    bool isSent = false;
+
+                    foreach (System.Net.Sockets.TcpClient client in user.Clients)
+                    {
+                        DataPackage data = new DataPackage
+                        {
+                            Client = client,
+                            Data = bData
+                        };
+
+                        System.Threading.Thread tdSend = new System.Threading.Thread(delegate ()
+                        {
+                            try
+                            {
+                                sender.SendMessage(data);
+                                isSent = true;
+                            }
+                            catch
+                            {
+
+                            }
+                        });
+
+                        tdSend.Start();
+                    }
+
+                    if (isSent)
                         return;
                     else
                     {
@@ -50,7 +73,7 @@ namespace Newtalking_BLL_Server.Message
                         //{
                         //    Data.Data.ArrSendingMessages.Add(msgData);
                         //}
-                        Thread td = new Thread(delegate()
+                        Thread td = new Thread(delegate ()
                         {
                             SQLService sql = new SQLService();
                             sql.InsertIntoOverMessages(msgData);

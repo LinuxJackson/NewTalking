@@ -14,13 +14,14 @@ namespace Newtalking_BLL_Server.Account
     {
         internal LoginData loginData = new LoginData();
         bool isLogined = false;
-        OnlineUserProperties onlineUser = new OnlineUserProperties();
+        System.Net.Sockets.TcpClient client;
+        int user_id;
 
         internal AccountLogin(DataPackage data)
         {
             loginData = LoginDataConvert.ConvertToClass(data.Data);
-            onlineUser.Client = data.Client;
-            onlineUser.User_id = loginData.User_id;
+            client = data.Client;
+            user_id = loginData.User_id;
         }
 
         internal bool Login()
@@ -32,34 +33,13 @@ namespace Newtalking_BLL_Server.Account
 
         internal bool Respect()
         {
-            DataPackage data = new DataPackage();
-            data.Client = onlineUser.Client;
-            data.Data = LoginDataConvert.ConvertToBytes(isLogined, loginData.Uid);
             Sender sender = new Sender();
 
-            //[未升级] 发送所有消息
-
-            //ArrayList arrTemp = new ArrayList();
-            //lock (Data.Data.ArrSendingMessages)
-            //{
-            //    ArrayList arrNew = Data.Data.ArrSendingMessages;
-            //    Data.Data.ArrSendingMessages.Clear();
-            //    for (int i = 0; i < arrNew.Count; i++)
-            //    {
-            //        MessageData msg = (MessageData)arrNew[i];
-            //        if (msg.Receiver_id == data.User_id)
-            //            arrTemp.Add(msg);
-            //        else
-            //            Data.Data.ArrSendingMessages.Add(msg);
-            //    }
-            //}
-            //for (int i = 0; i < arrTemp.Count; i++)
-            //{
-            //    MessageData msg = (MessageData)arrTemp[i];
-            //    Newtalking_DAL_Data.MessageDataConvert convert = new Newtalking_DAL_Data.MessageDataConvert();
-            //    Message msgSend = new Message(convert.ConvertToBytes(msg));
-            //    msgSend.Send();
-            //})
+            DataPackage data = new DataPackage
+            {
+                Client = client,
+                Data = LoginDataConvert.ConvertToBytes(isLogined, loginData.Uid)
+            };
 
             return sender.SendMessage(data);
         }
@@ -70,8 +50,19 @@ namespace Newtalking_BLL_Server.Account
             {
                 try
                 {
-                    if (!Data.Data.ArrOnlineUsers.ContainsKey(onlineUser.User_id))
-                        Data.Data.ArrOnlineUsers.Add(onlineUser.User_id, onlineUser);
+                    if (!Data.Data.ArrOnlineUsers.ContainsKey(user_id))
+                    {
+                        OnlineUserProperties onlineUser = new OnlineUserProperties();
+                        onlineUser.User_id = user_id;
+                        onlineUser.Clients.Add(client);
+
+                        Data.Data.ArrOnlineUsers.Add(user_id, onlineUser);
+                    }
+                    else
+                    {
+                        OnlineUserProperties user = Data.Data.ArrOnlineUsers[user_id];
+                        user.Clients.Add(client);
+                    }
                 }
                 catch
                 {
