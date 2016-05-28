@@ -54,7 +54,19 @@ namespace Newtalking_Service
                             lock (Data.Data.ArrOnlineUsers)
                             {
                                 if (bll.isLogined)
-                                    Data.Data.ArrOnlineUsers.Remove(bll.logined_ID);
+                                {
+                                    if (Data.Data.ArrOnlineUsers.ContainsKey(bll.logined_ID))
+                                    {
+                                        foreach (TcpClient client in Data.Data.ArrOnlineUsers[bll.logined_ID].Clients)
+                                            if (client == tcpUser)
+                                            {
+                                                Data.Data.ArrOnlineUsers[bll.logined_ID].Clients.Remove(client);
+                                                break;
+                                            }
+                                        if (Data.Data.ArrOnlineUsers[bll.logined_ID].Clients.Count == 0)
+                                            Data.Data.ArrOnlineUsers.Remove(bll.logined_ID);
+                                    }
+                                }
                             }
                         }
                     });

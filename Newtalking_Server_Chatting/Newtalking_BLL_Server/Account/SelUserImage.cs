@@ -15,7 +15,6 @@ namespace Newtalking_BLL_Server.Account
     {
         DataPackage dataPack;
         FileStream fsSend;
-        byte[] bPackBegin = new byte[4];
         string path;
 
         internal SelUserImage(DataPackage dataPackTemp)
@@ -34,7 +33,7 @@ namespace Newtalking_BLL_Server.Account
                 return false;
             else
                 fsSend = new FileStream(path, FileMode.Open, FileAccess.Read);
-            Newtalking_DAL_Server.SendFile sender = new Newtalking_DAL_Server.SendFile(dataPack.Client, fsSend, bPackBegin);
+            Newtalking_DAL_Server.SendFile sender = new Newtalking_DAL_Server.SendFile(dataPack.Client, fsSend);
             return sender.Send();
         }
     }

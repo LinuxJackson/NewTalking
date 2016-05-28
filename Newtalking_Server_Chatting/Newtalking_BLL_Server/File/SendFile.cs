@@ -15,14 +15,13 @@ namespace Newtalking_BLL_Server.File
     {
         DataPackage dataPack;
         FileStream fsSend;
-        byte[] bPackBegin = new byte[4];
         string path;
         bool isAccess = true;
 
         internal SendFile(DataPackage dataPackTemp)
         {
             dataPack = dataPackTemp;
-            Buffer.BlockCopy(dataPackTemp.Data, 2, bPackBegin, 0, 4);
+            //Buffer.BlockCopy(dataPackTemp.Data, 2, bPackBegin, 0, 4);
             
             FileRequest fr = FileRequestConvert.ConvertToClass_Send(dataPackTemp.Data);
             path = FileCheck.SelUserFileDir(fr.User_id, fr.FileName);
@@ -40,7 +39,7 @@ namespace Newtalking_BLL_Server.File
                     return false;
                 else
                     fsSend = new FileStream(path, FileMode.Open, FileAccess.Read);
-                Newtalking_DAL_Server.SendFile sender = new Newtalking_DAL_Server.SendFile(dataPack.Client, fsSend, bPackBegin);
+                Newtalking_DAL_Server.SendFile sender = new Newtalking_DAL_Server.SendFile(dataPack.Client, fsSend);
                 return sender.Send();
             }
             return false;

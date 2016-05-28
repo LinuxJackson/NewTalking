@@ -43,3 +43,5 @@ E:\LinuxJackson\Newtalking_Server_Chatting\Newtalking_DAL_Server\obj\Debug\Newta
 E:\LinuxJackson\Newtalking_Server_Chatting\Newtalking_DAL_Server\obj\Debug\Newtalking_DAL_Server.pdb
 C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Newtalking_DAL_Server\bin\Debug\Flags.dll
 C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Newtalking_DAL_Server\bin\Debug\Flags.pdb
+C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Newtalking_DAL_Server\bin\Debug\Flie_DAL.dll
+C:\Users\Dell-\Desktop\Newtalking_Server_Chatting\Newtalking_DAL_Server\bin\Debug\Flie_DAL.pdb

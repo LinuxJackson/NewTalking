@@ -76,6 +76,10 @@
       <Project>{3f69638a-ad84-411d-9807-ac4f979f84f6}</Project>
       <Name>Flags</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Flie_DAL\File_DAL.csproj">
+      <Project>{a2b5d4f6-83bd-4bdc-aa69-bee5384b07ff}</Project>
+      <Name>File_DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{e68dca14-25e4-4240-9540-c7f9466cb1eb}</Project>
       <Name>Model</Name>

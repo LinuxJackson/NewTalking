@@ -183,9 +183,9 @@ namespace Newtalking_DAL_Data
         static public ReceiveFileRequest ConvertToData_Receive(byte[] data)
         {
             ReceiveFileRequest receiveFile = new ReceiveFileRequest();
-            receiveFile.User_id = BitConverter.ToInt32(data, 0);
-            receiveFile.File_name_length = BitConverter.ToInt16(data, 4);
-            receiveFile.File_name = BitConverter.ToString(data, 6, receiveFile.File_name_length);
+            receiveFile.User_id = BitConverter.ToInt32(data, 2);
+            receiveFile.File_name_length = BitConverter.ToInt16(data, 6);
+            receiveFile.File_name =Encoding.Default.GetString(data, 8, receiveFile.File_name_length);
             return receiveFile;
         }
     }
@@ -203,7 +203,7 @@ namespace Newtalking_DAL_Data
 
         static public byte[] ConvertToBytes_End(Int32 uid)
         {
-            byte[] bResult = new byte[8];
+            byte[] bResult = new byte[10];
 
             BitConverter.GetBytes((short)2).CopyTo(bResult, 0);
             BitConverter.GetBytes(uid).CopyTo(bResult, 2);

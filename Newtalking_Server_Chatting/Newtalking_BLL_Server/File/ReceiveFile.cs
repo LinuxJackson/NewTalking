@@ -22,17 +22,11 @@ namespace Newtalking_BLL_Server.File
 
         internal bool Receive()
         {
-            Newtalking_DAL_Server.ReceiveFile rece = new Newtalking_DAL_Server.ReceiveFile(remoteClient);
             string[] strs = FileCheck.CheckCreateUserDir(rfr.User_id);
-            WriteFile writer = new WriteFile(strs[0] + rfr.File_name);
             try {
-                byte[] data;
-                do
-                {
-                    data = rece.Receive();
-                    writer.Write(data);
-                } while (data.Length == 1024);
-                writer.fileStream.Close();
+                Newtalking_DAL_Server.ReceiveFile rece = new Newtalking_DAL_Server.ReceiveFile(remoteClient, new WriteFile(strs[0] + rfr.File_name));
+                if (!rece.Receive())
+                    return false;
 
                 string key = "";
                 Random random = new Random();
@@ -45,7 +39,6 @@ namespace Newtalking_BLL_Server.File
             }
             catch
             {
-                writer.Delete();
                 return false;
             }
         }

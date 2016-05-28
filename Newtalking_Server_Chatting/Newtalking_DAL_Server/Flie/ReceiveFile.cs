@@ -5,6 +5,7 @@ using System.Text;
 using System.Net.Sockets;
 using Model;
 using Newtalking_DAL_Server;
+using File_DAL;
 
 namespace Newtalking_DAL_Server
 {
@@ -13,32 +14,38 @@ namespace Newtalking_DAL_Server
         const int BufferSize = 1024;
         TcpClient remoteClient;
         Receiver rece;
+        WriteFile writer;
 
-        public ReceiveFile(TcpClient tcpClient)
+        public ReceiveFile(TcpClient tcpClient, WriteFile writeFile)
         {
             //端口2002
             remoteClient = tcpClient;
+            writer = writeFile;
         }
 
-        public byte[] Receive()
+        public bool Receive()
         {
             try
             {
-                NetworkStream streamToClient = remoteClient.GetStream();
-                byte[] buffer = new byte[BufferSize];
-                int bytesRead = streamToClient.Read(buffer, 0, BufferSize);
-
-                DataPackage rdp = new DataPackage();
-
-                rdp.Client = remoteClient;
-                byte[] data = buffer;
-                return data;
+                int bytesRead = 0;
+                do
+                {
+                    NetworkStream streamToClient = remoteClient.GetStream();
+                    byte[] buffer = new byte[BufferSize];
+                    bytesRead = streamToClient.Read(buffer, 0, BufferSize);
+                    writer.Write(buffer);
+                } while (bytesRead == BufferSize);
+                return true;
             }
             catch
             {
-                return null;
+                writer.Delete();
+                return false;
+            }
+            finally
+            {
+                writer.fileStream.Close();
             }
         }
-
     }
 }
