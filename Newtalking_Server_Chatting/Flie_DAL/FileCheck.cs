@@ -34,10 +34,10 @@ namespace File_DAL
             {
                 if (!Directory.Exists(dir + "Files\\" + user_id + "\\"))
                     Directory.CreateDirectory(dir + "Files\\" + user_id + "\\");
-                if (!Directory.Exists(dir + "Users\\" + user_id + "Information\\"))
-                    Directory.CreateDirectory(dir + "Users\\" + user_id + "Information\\");
-                if (!Directory.Exists(dir + "Users\\" + user_id + "Chatting\\"))
-                    Directory.CreateDirectory(dir + "Users\\" + user_id + "Chatting\\");
+                if (!Directory.Exists(dir + "Users\\" + user_id + "\\Information\\"))
+                    Directory.CreateDirectory(dir + "Users\\" + user_id + "\\Information\\");
+                if (!Directory.Exists(dir + "Users\\" + user_id + "\\Chatting\\"))
+                    Directory.CreateDirectory(dir + "Users\\" + user_id + "\\Chatting\\");
 
                 string[] arrAddr = new string[3];
                 arrAddr[0] = dir + "Files\\" + user_id + "\\";

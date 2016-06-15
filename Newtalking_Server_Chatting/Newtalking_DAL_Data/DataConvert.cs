@@ -184,8 +184,9 @@ namespace Newtalking_DAL_Data
         {
             ReceiveFileRequest receiveFile = new ReceiveFileRequest();
             receiveFile.User_id = BitConverter.ToInt32(data, 2);
-            receiveFile.File_name_length = BitConverter.ToInt16(data, 6);
-            receiveFile.File_name =Encoding.Default.GetString(data, 8, receiveFile.File_name_length);
+            receiveFile.File_length = BitConverter.ToInt16(data, 6);
+            receiveFile.File_name_length = BitConverter.ToInt16(data, 10);
+            receiveFile.File_name =Encoding.Default.GetString(data, 12, receiveFile.File_name_length);
             return receiveFile;
         }
     }

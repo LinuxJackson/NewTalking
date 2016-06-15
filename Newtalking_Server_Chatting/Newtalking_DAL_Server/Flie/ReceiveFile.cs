@@ -15,26 +15,35 @@ namespace Newtalking_DAL_Server
         TcpClient remoteClient;
         Receiver rece;
         WriteFile writer;
+        int file_length;
 
-        public ReceiveFile(TcpClient tcpClient, WriteFile writeFile)
+        public ReceiveFile(TcpClient tcpClient, WriteFile writeFile, int file_length)
         {
             //端口2002
             remoteClient = tcpClient;
             writer = writeFile;
+            this.file_length = file_length;
         }
 
         public bool Receive()
         {
             try
             {
-                int bytesRead = 0;
-                do
+                byte[] buffer = new byte[file_length];
+
+                NetworkStream stream = remoteClient.GetStream();
+                int readLength = 0;
+                while (readLength < file_length)
                 {
-                    NetworkStream streamToClient = remoteClient.GetStream();
-                    byte[] buffer = new byte[BufferSize];
-                    bytesRead = streamToClient.Read(buffer, 0, BufferSize);
-                    writer.Write(buffer);
-                } while (bytesRead == BufferSize);
+                    int NowRead = stream.Read(buffer, readLength, file_length - readLength);
+                    if (NowRead == 0)
+                    {
+                        writer.Write(buffer);
+                        break;
+                    }
+                    readLength += NowRead;
+                }
+
                 return true;
             }
             catch

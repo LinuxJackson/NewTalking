@@ -8,6 +8,7 @@ namespace Model
     public class ReceiveFileRequest
     {
         private int user_id;
+        private int file_length;
         private short file_name_length;
         private string file_name = "";
 
@@ -47,6 +48,19 @@ namespace Model
             set
             {
                 file_name = value;
+            }
+        }
+
+        public int File_length
+        {
+            get
+            {
+                return file_length;
+            }
+
+            set
+            {
+                file_length = value;
             }
         }
     }
