@@ -22,9 +22,9 @@ namespace Newtalking_BLL_Server.Account
             //修改为数据库查询后传入
 
             UserImage userImage = SelUserImageConvert.ConvertToClass(dataPackTemp.Data);
-            SQLService sql = new SQLService();
-            string strFileName = sql.SelUserImageName(userImage.User_id);
-            path = FileCheck.SelUserImage(userImage.User_id, strFileName);
+            //SQLService sql = new SQLService();
+            //string strFileName = sql.SelUserImageName(userImage.User_id);
+            path = FileCheck.SelUserImage(userImage.User_id, Flags.FileFlags.DefaultUserImageFileName);
         }
 
         internal bool Send()

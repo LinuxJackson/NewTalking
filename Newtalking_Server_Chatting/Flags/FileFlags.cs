@@ -8,5 +8,6 @@ namespace Flags
     public class FileFlags
     {
         public const string FileExistsFailedFlag = "AppFlags_FileExistsFailedFlag";
+        public const string DefaultUserImageFileName = "UserImage";
     }
 }

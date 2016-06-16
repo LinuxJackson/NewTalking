@@ -24,7 +24,7 @@ namespace Newtalking_DAL_Server
             writer = writeFile;
             this.file_length = file_length;
         }
-
+        
         public bool Receive()
         {
             try

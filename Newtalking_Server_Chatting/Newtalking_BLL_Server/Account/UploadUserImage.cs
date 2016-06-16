@@ -26,16 +26,17 @@ namespace Newtalking_BLL_Server.Account
         {
             try
             {
+                //恢复文件名
                 string[] strs = FileCheck.CheckCreateUserDir(userImage.User_id);
-                string path = strs[0] + userImage.File_name;
+                string path = strs[0] + Flags.FileFlags.DefaultUserImageFileName;
 
                 int file_length = GetFileInfo.GetLength(path);
                 Newtalking_DAL_Server.ReceiveFile rece = new Newtalking_DAL_Server.ReceiveFile(client, new WriteFile(path), file_length);
                 if (!rece.Receive())
                     return false;
 
-                SQLService sql = new SQLService();
-                sql.ChangeUser_Image(userImage.User_id, userImage.File_name);
+                //SQLService sql = new SQLService();
+                //sql.ChangeUser_Image(userImage.User_id, userImage.File_name);
                 return true;
             }
             catch
