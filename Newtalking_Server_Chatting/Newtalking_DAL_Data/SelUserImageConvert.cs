@@ -14,14 +14,6 @@ namespace Newtalking_DAL_Data
 
             userImage.Uid = BitConverter.ToInt32(data, 2);
             userImage.User_id = BitConverter.ToInt32(data, 6);
-            string temp = Encoding.Default.GetString(data, 10, 255);
-
-            foreach (char c in temp)
-            {
-                if (c == '\0')
-                    break;
-                userImage.File_name += c;
-            }
 
             return userImage;
         }

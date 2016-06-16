@@ -9,7 +9,6 @@ namespace Model
     {
         private int uid;
         private int user_id;
-        private string file_name = "";
 
         public int Uid
         {
@@ -21,19 +20,6 @@ namespace Model
             set
             {
                 uid = value;
-            }
-        }
-
-        public string File_name
-        {
-            get
-            {
-                return file_name;
-            }
-
-            set
-            {
-                file_name = value;
             }
         }
 
