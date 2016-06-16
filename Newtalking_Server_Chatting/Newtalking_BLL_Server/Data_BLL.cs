@@ -106,11 +106,6 @@ namespace Newtalking_BLL_Server
                             SendFile sendFile = new SendFile(data);
                             sendFile.Send();
                             break;
-                        case 7:        //接收文件[未测试]
-                                       //开辟新线程[待修改]
-                            Newtalking_BLL_Server.File.ReceiveFile receFile = new File.ReceiveFile(data);
-                            receFile.Receive();
-                            break;
                         case 8:         //用户头像查看申请[未测试]
                             SelUserImage sendUserImage = new SelUserImage(data);
                             sendUserImage.Send();
