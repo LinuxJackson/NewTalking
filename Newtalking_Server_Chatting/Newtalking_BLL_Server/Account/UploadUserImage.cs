@@ -18,7 +18,7 @@ namespace Newtalking_BLL_Server.Account
 
         internal UploadUserImage(DataPackage data)
         {
-            userImage = UserImageConvert.ConvertToClass(data.Data);
+            userImage = SelUserImageConvert.ConvertToClass(data.Data);
             client = data.Client;
         }
 
@@ -27,7 +27,10 @@ namespace Newtalking_BLL_Server.Account
             try
             {
                 string[] strs = FileCheck.CheckCreateUserDir(userImage.User_id);
-                Newtalking_DAL_Server.ReceiveFile rece = new Newtalking_DAL_Server.ReceiveFile(client, new WriteFile(strs[1] + userImage.File_name));
+                string path = strs[0] + userImage.File_name;
+
+                int file_length = GetFileInfo.GetLength(path);
+                Newtalking_DAL_Server.ReceiveFile rece = new Newtalking_DAL_Server.ReceiveFile(client, new WriteFile(path), file_length);
                 if (!rece.Receive())
                     return false;
 

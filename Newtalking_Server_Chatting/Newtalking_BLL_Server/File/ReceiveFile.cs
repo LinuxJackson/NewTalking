@@ -13,18 +13,22 @@ namespace Newtalking_BLL_Server.File
     {
         ReceiveFileRequest rfr = new ReceiveFileRequest();
         System.Net.Sockets.TcpClient remoteClient;
+        string[] strs;
+        string path;
 
         internal ReceiveFile(DataPackage data)
         {
             rfr = FileRequestConvert.ConvertToData_Receive(data.Data);
             remoteClient = data.Client;
+            strs = FileCheck.CheckCreateUserDir(rfr.User_id);
+            path = strs[0] + rfr.File_name;
+            rfr.File_length = File_DAL.GetFileInfo.GetLength(path);
         }
 
         internal bool Receive()
         {
-            string[] strs = FileCheck.CheckCreateUserDir(rfr.User_id);
             try {
-                Newtalking_DAL_Server.ReceiveFile rece = new Newtalking_DAL_Server.ReceiveFile(remoteClient, new WriteFile(strs[0] + rfr.File_name));
+                Newtalking_DAL_Server.ReceiveFile rece = new Newtalking_DAL_Server.ReceiveFile(remoteClient, new WriteFile(path), rfr.File_length);
                 if (!rece.Receive())
                     return false;
 

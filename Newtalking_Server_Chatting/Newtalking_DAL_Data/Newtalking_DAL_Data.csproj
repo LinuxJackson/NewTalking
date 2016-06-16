@@ -58,9 +58,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataConvert.cs" />
-    <Compile Include="GetClientInfo.cs" />
+    <Compile Include="AccountInfoConvet.cs" />
+    <Compile Include="FileRequestConvert.cs" />
+    <Compile Include="FollowingConvert.cs" />
+    <Compile Include="LoginDataConvert.cs" />
+    <Compile Include="MessageDataConvert.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RefreshRequestConvert.cs" />
+    <Compile Include="SelectAccountConvert.cs" />
+    <Compile Include="SelUserImageConvert.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model\Model.csproj">

@@ -21,7 +21,7 @@ namespace Newtalking_BLL_Server.Account
         {
             //修改为数据库查询后传入
 
-            UserImage userImage = UserImageConvert.ConvertToClass(dataPackTemp.Data);
+            UserImage userImage = SelUserImageConvert.ConvertToClass(dataPackTemp.Data);
             SQLService sql = new SQLService();
             string strFileName = sql.SelUserImageName(userImage.User_id);
             path = FileCheck.SelUserImage(userImage.User_id, strFileName);
